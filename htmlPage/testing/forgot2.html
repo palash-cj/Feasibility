@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forgotten Password - Feasibility.Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        * {
+            margin:0px;
+            padding:0px;
+            box-sizing: border-box;
+        }
+        html,body {
+            width:100%;
+            height:100%;
+            margin:0;
+            padding:0;
+            overflow-x:hidden;
+        }
+        body {
+            margin:0;
+            padding:0;
+            font-size: 14px;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .nav-outer{
+            position: sticky;
+            display:flex;
+            align-items:center;
+            height:85px;
+            width: 100%;
+            top:-34px;
+            background-color: white;
+            -webkit-box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
+            box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
+            z-index:1;
+        }
+        
+        .navbar  {
+            position:sticky; 
+            top:0;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background-color: white;
+            padding-left: 140px;
+            height:51px;
+            padding-right: 150px;
+            width:100%;  
+        }   
+        .headlinks ul {
+            margin:0;
+            padding:0;
+            display:flex;
+        }
+        .headlinks li {
+            list-style:none;
+            padding-right: 0px;
+        }
+        .headlinks li a {
+            text-decoration:none;
+            color: rgb(105, 102, 102);
+            padding-right: 22px;
+            padding-top:7px;
+            display: block;
+            font-weight:bold;
+        }
+        .headlinks li a:hover {
+            color:rgb(145, 132, 132);
+        }
+        .toggle-button {
+            
+            position:absolute;
+            top: 1.5rem;
+            right: 8em;
+            display:none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height:21px;
+        }
+        .toggle-button .bar {
+            height:3px;
+            width:100%;
+            background-color: #0096ff;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 1000px) {
+            .toggle-button {
+                display:flex;
+                top:2.2em;
+                right:7em;
+            }
+            .headlinks {
+                display:none;
+                width:100%;
+            }
+            .nav-outer {
+                position:absolute;
+                top:0;
+                
+            }
+            .navbar {
+                
+                position:absolute;
+                left:0;
+                padding-left: 100px;
+                padding-right:100px;
+            }
+
+            .headlinks ul {                
+                flex-direction:column;
+            }
+            .search {
+                display:none;
+            }
+            .headlinks.active {
+                display:flex;
+                background-color: white;
+                width:100%;
+                margin-top: 550px;
+                padding-top:50px;
+                padding-left: 50px;
+                padding-bottom: 50px;
+                border-top:10px;
+                border-top-color: rgb(92, 153, 177);
+            }
+            .head-title {
+                padding-top:40px;
+            }
+            #search {
+                display: none;
+            }
+            
+        }
+        .first {
+            padding: 100px 0 200px 0;
+            background-color: #f1f1f1;
+            display:flex;
+            justify-content: center;
+        }
+        .main-box {
+            
+            background-color: white;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            width:400px;
+            border:1px solid #0096ff;
+            -webkit-box-shadow: 3px 3px 13px 0px rgba(0,0,0,0.51);
+-moz-box-shadow: 3px 3px 13px 0px rgba(0,0,0,0.51);
+box-shadow: 3px 3px 13px 0px rgba(0,0,0,0.51);
+        }
+        .inner-box {
+            
+            align-items: center;
+            justify-content: center;
+            padding-top: 20px;
+            padding-right: 25px;
+            padding-bottom: 20px;
+            padding-left: 25px;
+            width:100%;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .input-field {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 5px;
+            width:100%;
+        }
+        form {
+            width:100%;
+        }
+        .img-logo {
+            padding-bottom:10px;
+            width:70px;
+        }
+        input{
+            margin-bottom:25px;
+            width:100%;
+            border:transparent;
+            background-color: #f1f1f1;
+            padding-bottom:5px;
+            padding-top:5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 5px;
+            height:40px;
+            font-size:16px;
+            
+        }
+        input:focus {
+            outline: none;
+            border: 1px solid #0096FF;
+        }
+        .submit-btn{
+            width:100%;
+            margin-bottom:10px;
+            background-color: skyblue;
+            color:white;
+            height:35px;
+            border-radius: 5px;
+            border:none;
+            font-weight:bold;
+            justify-content: center;
+            font-size:16px;
+            
+        }
+        .submit-btn:hover {
+            cursor:not-allowed;
+        }
+        .title {
+            padding: 0px 0 15px 0;
+            text-align:center;
+            font-size:30px;
+            color:#0096ff;
+            font-weight:bold;
+        }
+        .title1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size:20px;
+            font-weight:bold;
+            color: #0096FF;
+            padding: 0 0 25px 0;
+        }
+        p1 {
+            font-size: 14px;
+        }
+        img {
+            width:250px;
+        }
+        .end {
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            color: white; 
+            padding-top: 70px;  
+            padding-bottom: 70px; 
+            
+            
+        }
+        .end1 {
+            width: 25%;
+            margin-right: 30px;
+            padding-left:30px;
+            padding-right:30px;
+        }
+        .end2 {
+            width: 25%;
+            margin-left: .2em;
+            margin-right: 30px;
+            padding-left:30px;
+            padding-right:30px;
+        }
+        .end3 {
+            width: auto;
+            margin-left: .2em;
+            padding-left:30px;
+            padding-right:30px;
+        }
+        .send {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        @media (max-width:1000px){
+            .first {
+                padding: 200px 0px 200px 0px;
+            }
+            .end{
+                flex-wrap:wrap;
+                padding-left:100px;
+                padding-right:100px;
+            }
+            .end1 {
+                width:100%;
+                padding: 0px 0px 20px 0px;
+                margin: 0px 0px 0px 0px;
+            }
+            .end2 {
+                width:100%;
+                padding: 0px 0px 0px 0px;
+                margin: 0px 0px 0px 0px;
+            }
+            .end3 {
+                width:100%;
+                padding: 30px 0px 0px 0px;
+                margin: 0px 0px 0px 0px;
+                
+            }
+        }
+        @media (max-width:450px){
+            .first {
+                padding-left:40px;
+                padding-right:40px;
+            }
+            
+            .navbar {
+                padding-left:40px;
+                padding-right:40px;
+            }
+            
+            .toggle-button {
+                right: 40px;
+            }
+            .end {
+                padding-left:40px;
+                padding-right:40px;
+            }
+            .end1{
+                width:100%;
+            }
+            .end2{
+                width:100%;
+            }
+            .end3{
+                width:100%;
+            }
+            img {
+                width:175px;
+            }
+        }
+        .popUp {
+            /* display: flex; */
+            align-items:center;
+            justify-content: center;
+            flex-wrap:wrap;
+            text-align:center;
+            padding:15px 20px;
+            background-color: #0096ff;
+            color:white;
+            width:fit-content;
+            height:fit-content;
+            transform: translate(-50%,275%) scale(0.1);
+            visibility:hidden;
+            transition: transform 0.4s;
+        }
+        .open-popUp {
+            visibility:visible;
+            transform: translate(-50%,275%) scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-outer">
+        <nav class="navbar">
+        
+            <div class="head-title">
+                <img src="feasibilitypro-logo-25 (1).jpg">
+            </div>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="headlinks">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>            
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Training</a></li>
+                    <li><a href="#">Consulting</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><i id="search" class="fa fa-search" style="font-size:18px; color:#666; padding-top: 5px;"></i></li>
+                </ul>
+                
+            </div>
+            <!-- <div class="search">
+                <i class="fa fa-search" style="font-size:18px; color:#666; padding-top: 14px;"></i>
+            </div>         -->
+            
+        </nav>
+    </div>
+    <div class="first">
+        <div class="main-box">
+            <div class="inner-box">
+                <div class="logo"><img class="img-logo" src="feasibility.pro(icon).jpg"></div>
+                <div class="title">Feasibility Pro</div>
+                <div class="title1">Forgot Password</div>
+                <div class="input-field">
+                    <form id="frm">
+                        <input placeholder="Email Address" name="email" type="email" oninput="forgot();" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2, 4}$" title="eg. abc@abc.xyz" required>
+                        <div class="send"><button id='butn' class="submit-btn" type="button" data-toggle="modal" data-target="#myModal">Send</button></div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+              
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="end">
+        <div class="end1">
+            <h2>Address</h2>
+            <p style="color: white; padding-top:10px;">5810 AMBLER DRIVE, UNIT 14 MISSISSAUGA, ONTARIO L4W4J5, CANADA</p><br>
+        </div>
+        <div class="end2">
+            <h2>Phone Number</h2>
+            <p style="color: white; padding-top:10px;">+1 24 970 9224</p>
+            <br>
+            <br>
+            <h2>Email</h2>
+            <p style="color: white; padding-top:10px;">info@feasibility.pro</p>
+        </div>
+        <div class="end3">
+            <h2 style="padding-bottom:10px">Follow</h2>
+            <i class="fa fa-facebook" style="font-size:18px; color:white; padding-right:15px"></i>
+            <i class="fa fa-twitter" style="font-size:18px; color:white; padding-right:15px"></i>
+            <i class="fa fa-linkedin" style="font-size:18px; color:white; padding-right:15px"></i>
+            <i class="fa fa-youtube-play" style="font-size:18px;color:white; padding-right:15px"></i>
+        </div>   
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+
+
+</html>

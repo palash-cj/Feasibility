@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<head>
+    <title>Contact Us - Feasibility.Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin :0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        html {
+                overflow-x: hidden;
+            }
+        .adjust-me-based-on-size{
+                margin-left: 0%;
+                margin-right: 0%;
+            }    
+        body {
+            font-family:sans-serif; 
+            font-size: 14px;
+            margin-top: 0px;
+            margin-left: 0px;
+            margin-right:0px;
+            margin-bottom: 0px;
+        }
+        .nav-outer{
+            position: sticky;
+            display:flex;
+            align-items:center;
+            height:85px;
+            width: 100%;
+            top:-34px;
+            background-color: white;
+            -webkit-box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
+            box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
+            z-index:1;
+        }
+        
+        .navbar  {
+            position:sticky; 
+            top:0;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background-color: white;
+            padding-left: 140px;
+            height:51px;
+            padding-right: 150px;
+            width:100%;  
+        }   
+        .headlinks ul {
+            margin:0;
+            padding:0;
+            display:flex;
+        }
+        .headlinks li {
+            list-style:none;
+            padding-right: 0px;
+        }
+        .headlinks li a {
+            text-decoration:none;
+            color: rgb(105, 102, 102);
+            padding-right: 22px;
+            padding-top:7px;
+            display: block;
+            font-weight:bold;
+        }
+        .headlinks li a:hover {
+            color:rgb(145, 132, 132);
+        }
+        .toggle-button {
+            
+            position:absolute;
+            top: 1.5rem;
+            right: 8em;
+            display:none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height:21px;
+        }
+        .toggle-button .bar {
+            height:3px;
+            width:100%;
+            background-color: #0096ff;
+            border-radius: 10px;
+        }
+
+        #width {
+            width:135%;
+        }
+        @media (max-width: 1000px) {
+            .toggle-button {
+                display:flex;
+                top:2.2em;
+                right:7em;
+            }
+            .headlinks {
+                display:none;
+                width:100%;
+            }
+            .nav-outer {
+                position:absolute;
+                top:0;
+                
+            }
+            .navbar {
+                
+                position:absolute;
+                left:0;
+                padding-left: 100px;
+                padding-right:100px;
+            }
+
+            .headlinks ul {                
+                flex-direction:column;
+            }
+            .search {
+                display:none;
+            }
+            .headlinks.active {
+                display:flex;
+                background-color: white;
+                width:100%;
+                margin-top: 550px;
+                padding-top:50px;
+                padding-left: 50px;
+                padding-bottom: 50px;
+                border-top:10px;
+                border-top-color: rgb(92, 153, 177);
+            }
+            .head-title {
+                padding-top:40px;
+            }
+            #search {
+                display: none;
+            }
+            
+        }
+        .first{
+            background-color: #f1f1f1; 
+            padding-left: 140px;
+            padding-right:140px; 
+            
+        }
+        p {
+            color: #666;
+            line-height: 1.7em;
+            letter-spacing: .4px;
+        }
+        .title {
+            padding-top: 80px;
+            padding-bottom: 80px;
+            font-size: 60px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 1000;
+        }
+        .title1 {  
+            padding-top: 20px;          
+            font-size: 60px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 1000;
+            line-height: 1.4em;
+            width: min-content;
+            padding-right: 170px;
+        }
+        .form-row {
+            display: flex;
+            margin-bottom: .5rem;
+            flex-wrap:wrap;
+            flex-direction: row;
+        }
+        .form-item {
+            
+            flex-grow: 1;
+            flex-basis: 0;
+        }
+        .flex-part {
+            display:flex;
+            padding-bottom: 80px;
+            width:100%;
+            /* flex-wrap:wrap;
+            flex-direction: row; */
+    
+        }
+        #id1 {
+            padding-left: 80px;
+        } 
+        
+        .flex-itm {
+            width: 100%;
+            /* padding-right: 60px; */
+        }
+        
+        .flex-itm2 {
+            width: 40%;
+        }
+        
+        .end {
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            color: white; 
+            padding-top: 70px;  
+            padding-bottom: 70px; 
+            
+            
+        }
+        .end1 {
+            width: 25%;
+            margin-right: 30px;
+            padding-left:30px;
+            padding-right:30px;
+        }
+        .end2 {
+            width: 25%;
+            margin-left: .2em;
+            margin-right: 30px;
+            padding-left:30px;
+            padding-right:30px;
+        }
+        .end3 {
+            width: auto;
+            margin-left: .2em;
+            padding-left:30px;
+            padding-right:30px;
+        }
+        .no-outline:focus {
+            outline: none;
+        }
+        .flex-part0 {
+            display: flex;
+            padding-bottom: 100px;
+            /* flex-wrap:wrap;
+            flex-direction: row; */
+        }
+        
+        .flex-itm01 {
+            width:100%;
+            padding-right: 65px;
+        }
+        .flex-itm0 {
+            width:100%;
+            display:flex;
+            flex-direction: column;
+        }
+        .flex-form {
+            display: flex;
+            padding-bottom: 30px;
+            /* flex-wrap:wrap;
+            flex-direction: row; */
+            column-gap: 10px;
+        }
+        .flex-form1 {
+            margin-right: 10px;
+            
+        }
+        
+        .outline:focus {
+            outline:none;
+        }
+        .btn {
+            margin:10px;
+            background: black;
+            color: white;
+            float:right;
+            padding: 12px 20px 12px 20px;
+            border-radius: 5px;
+            font-weight: lighter;
+            font-size: medium;
+            border: 0;
+        }
+
+        .options {
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: groove;
+            border-bottom:3px solid black;
+            background-color: transparent;
+            line-height: 10px;
+        }
+        .options:focus {
+            outline: none;
+        }
+        textarea {
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-width: 3px;
+            border-color: black;
+            background-color: transparent;
+            resize:none;
+            color:black;
+        }
+        textarea::placeholder {
+            color:black;
+            font-weight:bolder;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        select {
+            width: 233px;
+            border-bottom-width: 2px;
+            border-color: black;
+            padding-bottom: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+        }
+        .icn-config {
+            display: inline-flex;
+        }
+        hr.vertical {
+            height:100%; 
+            width:0;
+            border:1px solid #eee;
+            
+        } 
+        
+          
+        img {
+            width: 250px
+        } 
+
+        .dropbtn {
+            background-color: transparent;
+            padding-bottom:20px;
+           /* color: black; */
+            padding: 0px;
+            border: none;
+            cursor: pointer;
+            padding-bottom:25px;
+            font-weight:bold;
+            font-size:20px;
+        }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  overflow: auto;
+  padding-bottom:22px;
+}
+
+.show {display: block;}
+.show1 {display:none;}
+        @media (max-width:1000px){
+            .title {
+                padding-top:160px;
+                font-size: 40px;
+            }
+            .flex-part {
+                flex-wrap: wrap;
+            }
+            #id1{
+                padding-left:0px;
+            }
+            .title1 {
+                padding-top: 15px;
+                font-size: 40px;
+                width: 100%;
+                padding-right: 0px;
+            }
+            .flex-part0 {
+                flex-wrap : wrap;
+                flex-direction:row;
+            }
+            .first {
+                padding-left: 105px;
+                padding-right:105px;
+            }
+            .flex-form {
+                flex-wrap: wrap;
+            }
+            
+            .h2 {
+                font-size:18px;
+            }
+            .end {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                padding-left:120px;
+                padding-right:120px;
+
+            }
+            .end1 {
+                width:100%;
+                padding-left:0px;
+                padding-right:0px;
+            }
+            .end2 {
+                width: 100%;
+                padding-left:0px;
+                padding-right:0px;
+                padding-bottom:15px;
+            }
+            .end3 {
+                width: 100%;
+                padding-left:0px;
+                padding-right:0px;
+            }
+            .flex-itm {
+                padding-right:0px;
+            }
+            #h0 {
+                width: 100%;
+            }
+            .flex-form1 {
+                margin-right: 0px;
+                width:100%;
+            }
+            .message {
+                width:100%;
+            }
+            #abc {
+                padding-top: 15px;
+            }
+            .btn {
+                margin:0px;
+            }
+            .flex-itm01 {
+                padding-right:0px;
+            }
+        }
+        .message {
+            width: 98%;
+            resize: both;
+        }
+
+        @media (max-width:750px){
+            img {
+                width: 150px;
+            }
+            .body {
+                font-size: 12px;
+            }
+            .navbar {
+                padding-left: 90px;
+                padding-right: 90px;
+            }
+            .nav-outer {
+                height: 50px;
+                padding-bottom:13px;
+            }
+            .toggle-button {
+                top: 0.9rem;
+                right: 0.8rem;
+            }
+            .toggle-button .bar{
+                height: 1px;
+                width:60%;                
+            }
+            
+        }
+        @media (max-width:550px){
+            img {
+                width: 100px;
+            }
+            .body {
+                font-size: 10px;
+            }
+            .navbar {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+            .nav-outer {
+                height: 50px;
+                padding-bottom:13px;
+            }
+            .toggle-button {
+                top: 0.9rem;
+                right: 0.8rem;
+            }
+            .toggle-button .bar{
+                height: 1px;
+                width:60%;
+                
+            }
+        }
+        @media (max-width:450px){
+            img {
+                width: 100px;
+            }
+            .body {
+                font-size: 8px;
+                width:100px;
+            }
+            .navbar {
+                padding-left: 25px;
+                padding-right:25px;
+                height:27px;
+                width:100%;
+            }
+            .nav-outer {
+                padding-left: 25px;
+                padding-right: 20px;
+                height: 40px;
+                padding-bottom: 10px;
+                width:100%;
+            }
+            .toggle-button {
+                top: 0.8rem;
+                right: 0.7rem;
+                line-height: 1.2px;
+                height: 10px;
+            }
+            .toggle-button .bar{
+                height: 1px;
+                width:50%;
+                padding-bottom: 1px;
+            }
+            .first {
+                padding-left:30px;
+                padding-right:30px;
+                font-size:10px;
+            }
+            #h2 {
+                font-size: 11px;
+            }
+            #h0{
+                font-weight: 11px;
+                color:black;
+            }
+            .title {
+                font-size: 22px;
+                padding-top:90px;
+                padding-bottom: 45px;
+            }
+            .title1 {
+                padding-top: 8px;
+                font-size:22px;
+                line-height: 25px;
+                padding-top:10px;
+                padding-bottom:8px;
+            }
+            .end {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                padding-left:30px;
+                padding-right:30px;
+
+            }
+            .end3 {
+                padding-top:15px;
+            }
+            .message {
+                width: 100%;
+            }
+            .headlinks.active {
+                margin-top: 400px;               
+            }
+            
+        }
+        ::placeholder {
+            color:black;
+        }
+        
+    </style>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="nav-outer">
+        <nav class="navbar">
+        
+            <div class="head-title">
+                <img src="feasibilitypro-logo-25 (1).jpg">
+            </div>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="headlinks">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>            
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Training</a></li>
+                    <li><a href="#">Consulting</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><i id="search" class="fa fa-search" style="font-size:18px; color:#666; padding-top: 5px;"></i></li>
+                </ul>
+                
+            </div>
+            <!-- <div class="search">
+                <i class="fa fa-search" style="font-size:18px; color:#666; padding-top: 14px;"></i>
+            </div>         -->
+            
+        </nav>
+    </div>
+    <div class="first"">
+
+        
+
+        <div class="title">Get in touch</div>
+
+        <div class="flex-part">
+            <div id="width" id="line" class="flex-itm">
+                <h3 id="h2" style="padding-bottom:20px;">Send a Message</h3>
+                <p>We love to meet new people and share knowledge. Mail us if you would like to get connected.<br>
+                <br>
+                If you want to ask a real estate or excel question, Send us a tweet on twitter and we will reply or direct you if we don’t know the answer.<br>
+                <br>
+                For other matters, email us through the form below.</p>
+                <br>
+
+                <form >
+                    <div class="flex-form">
+                        <div class="flex-form1">
+                            <input id="h0" style="
+                            
+                            border: 0;
+                            border-bottom: 3px solid black;
+                            background: transparent;
+                            padding: 15px 5px 15px 0;
+                            width: 100%;
+                            font-weight: bold;
+                            color:black;
+                            margin-bottom: 20px;
+                            
+                        " class="outline" placeholder="Name" type="text">
+                           
+                            <select style="padding: 15px 0px; width:100%;" class="options">
+                                <option id="h2">Interested In</option>
+                                <option id="h2">Consulting Work</option>
+                                <option id="h2">Feasibility.Pro Software</option>
+                                <option id="h2">Development Analysis</option>
+                                <option id="h2">Other Products And Services</option>
+                            </select>
+                        </div>
+                        
+                        <div id="abc" class="flex-form1">
+                            <input id="h0" style="
+                            width: 48%;
+                            border: 0;
+                            border-bottom: 3px solid black;
+                            color:black;
+                            background: transparent;
+                            padding: 15px 5px 15px 0;
+                            width: 100%;
+                            font-weight:bold;
+                            margin-bottom: 20px;
+                        " class="outline" placeholder="Email Address" type="text">
+                            
+                            <input id="h0" style="
+                            width: 48%;
+                            border: 0;
+                            border-bottom: 3px solid black;
+                            color:black;
+                            background: transparent;
+                            padding: 15px 5px 15px 0;
+                            width: 100%;
+                            font-weight:bold;
+                            margin-bottom: 20px;
+                        " class="outline" placeholder="Phone Number" type="text">
+                        </div>
+                    </div>
+
+                    
+
+                    <textarea id="h0" rows="6" class="message" class="outline" placeholder="Message"></textarea>
+                    <br>
+                    <br>
+                    <br>
+                    <button class="btn" type="submit">Submit</button>
+                </form>
+            </div>
+
+            <hr style="margin-left:50px;">
+        
+        
+            <div id="id1" class="flex-itm">
+                <h3 id="h2" style="padding-bottom:20px;">Call Us</h3>
+                
+                <p>Give us a call. We're here for you 24/7.<br>
+                <br>
+                International phone charges may apply, depending on your carrier and calling plan. Some international numbers may not work from mobile phones.<br>
+
+                </p>
+                <br>
+                <div class="icn-config">
+                    <div class="icn">
+                        <i id="circle" class="fa fa-phone" style="font-size:18px; color:rgb(44, 199, 44);"></i>
+                    </div>
+                    <div class="icn">
+                        <p1 style="color:rgb(44, 199, 44); font-weight: bold; margin-left: 20px;">+1 24 970 9224</p1>
+                    </div>
+                </div>
+                
+                <br>
+                <br>
+                <br>
+                
+                <h3 id="h2" style="padding-bottom:20px;">Visit Us</h3>
+                
+                <p>Our office is located by Ambler Drive.<br>
+                <br>
+                We're based in the heart of beautiful Mississauga.
+                </p>
+                <br>
+                <div class="icn-config">
+                    <div class="icn">
+                        <i class="fa fa-map-marker" style="font-size:18px; color:rgb(44, 199, 44);"></i>
+                    </div>
+                    <div class="icn">
+                        <p1 style="color:rgb(44, 199, 44); font-weight: bold; margin-left: 20px; line-height: 20px;">5810 AMBLER DRIVE, UNIT 14 MISSISSAUGA, ONTARIO L4W4J5, CANADA</p1>
+                    </div>
+                </div>
+                
+               
+                <br>
+                <br>
+                <br>
+                <h3 id="h2" style="padding-bottom:20px;">Live Chat</h3>
+                
+                <p>
+                We're just one click away to help you make your project feasible.<br>
+                <br>
+
+                Live chat is only available for existing customers.
+                </p>
+                <br>
+                <div class="icn-config">
+                    <div class="icn">
+                        <i class="fa fa-comments" style="font-size:18px; color:rgb(44, 199, 44);"></i>                    
+                    </div>
+                    <div class="icn">
+                        <p1 style="color:rgb(44, 199, 44); font-weight: bold; margin-left: 20px;">Start Chat</p1>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div> 
+        
+        <div class="flex-part0">
+            <div class="flex-itm01">
+                <h2 id="h2">FAQ</h2>
+                <div class="title1">Frequently asked questions.</div>
+            </div>
+            <div class="flex-itm0">
+                <!-- <h2 id="h2" style="padding-bottom:20px;">Need immediate help?<h2> -->
+                <div class="dropdown">
+                    <button onclick="myFunction1()" id="one" class="dropbtn">Need immediate help?</button>
+                        <div id="myDrop1" id="myDropdown" class="dropdown-content">
+                            <p style="font-size:14px; font-weight:thin;">Give us a call. We're here for you 24/7.
+                                <br>
+                                <br>
+                                Existing customers can also reach us through Live Chat. Refer below frequently asked questions if you are new visitor.
+                            </p>
+                        </div>
+                </div>
+                
+                <div class="dropdown">
+                    <button onclick="myFunction2()" id="two" class="dropbtn">How to purchase the software?</button>
+                        <div id="myDrop2" id="myDropdown" class="dropdown-content">
+                            <p style="font-size:14px; font-weight:thin;">
+                                Refer our product page, you can purchase the software by making online payment. You can also contact our office for any help you need during the purchase.
+                            </p>
+                        </div>
+                </div>
+                
+                <div class="dropdown">
+                    <button onclick="myFunction3()" id="three" class="dropbtn">How to install the software?</button>
+                        <div id="myDrop3" id="myDropdown" class="dropdown-content">
+                            <p style="font-size:14px; font-weight:thin;">
+                                Immediately after payment, you will receive an email with installation guide and licensing details.  
+                            </p>
+                        </div>
+                </div>                
+                
+                <div class="dropdown">
+                    <button onclick="myFunction4()" id="four" class="dropbtn">Do we have Mac version of Feasibility.pro?</button>
+                        <div id="myDrop4" id="myDropdown" class="dropdown-content">
+                            <p style="font-size:14px; font-weight:thin;">
+                                Feasibility.pro can not run directly from a Mac, and can not be supported as such; most MAC’s now have ‘Virtual PC’ capabilities which can recreate a Windows environment. There are many Feasibility.pro clients who are successfully running this software on a Mac via VMware or Parallels, or via virtual machines.  
+                            </p>
+                        </div>
+                </div> 
+                
+                <div class="dropdown">
+                    <button onclick="myFunction5()" id="five" class="dropbtn">How does pricing work?</button>
+                        <div id="myDrop5" id="myDropdown" class="dropdown-content">
+                            <p style="font-size:14px; font-weight:thin;">
+                                Our products are priced fairly and transparently. Prices for various licensing options are published on the product page, you don't have to call us to know the pricing.
+                                <br>
+                                <br>
+                                Even after purchase, you can upgrade, switch or cancel your purchase any time. Refer Cancelation Policy for specific details.
+                            </p>
+                        </div>
+                </div> 
+
+            </div>
+        </div>
+        
+        <br>
+        <br>
+    </div>
+        
+    <div class="end">
+        <div class="end1">
+            <h2>Address</h2>
+            <p style="color: white; padding-top:10px;">5810 AMBLER DRIVE, UNIT 14 MISSISSAUGA, ONTARIO L4W4J5, CANADA</p><br>
+        </div>
+        <div class="end2">
+            <h2>Phone Number</h2>
+            <p style="color: white; padding-top:10px;">+1 24 970 9224</p>
+            <br>
+            <br>
+            <h2>Email</h2>
+            <p style="color: white; padding-top:10px;">info@feasibility.pro</p>
+        </div>
+        <div class="end3">
+            <h2 style="padding-bottom:10px">Follow</h2>
+            <i class="fa fa-facebook" style="font-size:18px; color:white; padding-right:15px"></i>
+            <i class="fa fa-twitter" style="font-size:18px; color:white; padding-right:15px"></i>
+            <i class="fa fa-linkedin" style="font-size:18px; color:white; padding-right:15px"></i>
+            <i class="fa fa-youtube-play" style="font-size:18px;color:white; padding-right:15px"></i>
+        </div>   
+    </div>
+    <!-- <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+    </script> -->
+</body>

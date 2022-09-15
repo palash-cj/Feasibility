@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Register - Feasibility.Pro
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+            margin:0px;
+            padding:0px;
+            box-sizing: border-box;
+        }
+        html,body {
+            width:100%;
+            height:100%;
+            margin:0;
+            padding:0;
+            overflow-x:hidden;
+        }
+        body {
+            margin-top: 0px;
+            margin-left: 0px;
+            margin-right:0px;
+            margin-bottom: 0px;
+            overflow-x :hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:14px;
+        }
+
+        .nav-outer{
+            position: sticky;
+            display:flex;
+            align-items:center;
+            height:85px;
+            width: 100%;
+            top:-34px;
+            background-color: white;
+            -webkit-box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
+            box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
+            z-index:1;
+        }
+        
+        .navbar  {
+            position:sticky; 
+            top:0;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background-color: white;
+            padding-left: 140px;
+            height:51px;
+            padding-right: 150px;
+            width:100%;  
+        }   
+        .headlinks ul {
+            margin:0;
+            padding:0;
+            display:flex;
+        }
+        .headlinks li {
+            list-style:none;
+            padding-right: 0px;
+        }
+        .headlinks li a {
+            text-decoration:none;
+            color: rgb(105, 102, 102);
+            padding-right: 22px;
+            padding-top:7px;
+            display: block;
+            font-weight:bold;
+        }
+        .headlinks li a:hover {
+            color:rgb(145, 132, 132);
+        }
+        .toggle-button {
+            
+            position:absolute;
+            top: 1.5rem;
+            right: 7.5em;
+            display:none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 25px;
+            height:19px;
+        }
+        .toggle-button .bar {
+            height:3px;
+            width:100%;
+            background-color: #0096FF;
+            border-radius: 10px;
+        }
+
+       
+        img {
+            width:250px;
+        }
+        .first {
+            background-color: #f1f1f1;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        .main-box {
+            background-color: white;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border:1px solid #0096ff;
+            align-items: center;
+            justify-content: center;
+            width:65%;
+            -webkit-box-shadow: 3px 3px 13px 0px rgba(0,0,0,0.51);
+            -moz-box-shadow: 3px 3px 13px 0px rgba(0,0,0,0.51);
+            box-shadow: 3px 3px 13px 0px rgba(0,0,0,0.51);
+        }
+        .main-title {
+            
+            text-align:center;
+            font-size:30px;
+            color:#0096FF;
+            font-weight:bold;
+            padding:10px 0 15px 0;
+        }
+        .sub {
+            
+            text-align:center;
+            font-size: 20px;
+            color:#0096ff;
+            font-weight:bold;
+        }
+        /* .title {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            padding-top:25px;
+            color:#666;
+        }
+        .subscript {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 25px;
+            color:#666;
+        } */
+        .logo {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .end {
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            color: white; 
+            padding-top: 70px;  
+            padding-bottom: 70px; 
+            
+            
+        }
+        .end1 {
+            width: 25%;
+            margin-right: 30px;
+            padding-left:30px;
+            padding-right:30px;
+        }
+        .end2 {
+            width: 25%;
+            margin-left: .2em;
+            margin-right: 30px;
+            padding-left:30px;
+            padding-right:30px;
+        }
+        .end3 {
+            width: auto;
+            margin-left: .2em;
+            padding-left:30px;
+            padding-right:30px;
+        }
+        #logo-img {
+            padding-top:15px;
+            padding-bottom:0px;
+            width: 70px;
+        }
+        .input-field {
+            display:flex;
+            flex-wrap:wrap;
+            align-items:center;
+            justify-content: center;
+            text-align:center;
+            padding-top:30px;
+            padding-bottom:30px;
+            width:100%;
+           
+        }
+        form{
+            width:100%;
+            padding-left:35px;
+            padding-right:35px;
+        }
+        .form-pad {
+            padding-bottom:10px;
+        }
+        .form-pad1 {
+            padding-bottom:30px;
+        }
+        .form-pad2 {
+            padding-bottom:10px;
+        }
+        
+        .options {
+            
+            padding-top:5px;
+            padding-bottom:5px;
+            padding-left:9px;
+            padding-right:10px;
+            height:40px;
+            width:100%;
+            border-radius:5px;
+            border:0px;
+            color:#777;
+            font-size:16px;
+            
+        }
+        select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+        select.options {
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+
+        /* select {
+            color:#777;
+        } */
+        select:focus {
+            outline: none;
+            border:1px solid #0096FF;
+        }
+        input {
+            padding-top:5px;
+            padding-bottom:5px;
+            padding-left:10px;
+            padding-right:10px;
+            height:40px;
+            width:100%;
+            border:0px;
+            border-radius:5px;
+            background-color: #f1f1f1;
+        }
+        input:focus {
+            outline:none;
+            border:1px solid #0096FF;
+        }
+        
+        .submit-btn {
+            width:25%;
+            height:40px;
+            border-radius:5px;
+            border:none;
+            background-color: #0096ff;
+            color:white;
+            font-weight:bold;
+            font-size:16px;
+        }
+        /* .submit-btn:hover {
+            cursor:not-allowed;
+        } */
+        
+        .already {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:#0096FF;
+            font-size:16px;
+            padding-bottom:25px;
+        }
+        input::placeholder {
+            font-size:16px;
+        }
+
+        .form-flex {
+            display:flex;
+        }
+        .form-flex1 {
+            width:99%;
+
+        }
+        .form-flex2 {
+            width:99%;
+            padding-left:2%;
+        }
+        @media (max-width: 1000px) {
+            html,body {
+                width:100%;
+                height:100%;
+                margin:0;
+                padding:0;
+                overflow-x:hidden;
+            }
+            .toggle-button {
+                display:flex;
+                top:2.3em;
+            }
+            .headlinks {
+                display:none;
+                width:100%;
+            }
+            .nav-outer {
+                position:absolute;
+                top:0;
+            }
+            .navbar {
+                
+                position:absolute;
+                left:0;
+                padding-left: 100px;
+                padding-right:100px;
+            }
+
+            .headlinks ul {                
+                flex-direction:column;
+            }
+            .search {
+                display:none;
+            }
+            .headlinks.active {
+                display:flex;
+                background-color: white;
+                width:100%;
+                margin-top: 550px;
+                padding-top:50px;
+                padding-left: 50px;
+                padding-bottom: 50px;
+                border-top:10px;
+                border-top-color: rgb(92, 153, 177);
+            }
+            .head-title {
+                padding-top:40px;
+            }
+            #search {
+                display: none;
+            }
+            .flexbox {
+                display:flex;
+                flex-wrap: wrap;
+            }
+            .first {
+                padding-top:160px;
+                padding-left:95px;
+                padding-right:95px;
+            }
+            .end {
+                display:flex;
+                flex-wrap:wrap;
+                padding-left:95px;
+                padding-right:95px;
+            }
+            .end1 {
+                width: 100%;
+                margin-right: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .end2 {
+                width: 100%;
+                margin-right: 0;
+                padding-left: 0;
+                padding-right: 0;
+                
+            }   
+            .end3 {
+                padding-top:15px;
+                width: 100%;
+                margin-right: 0;
+                padding-left: 0;
+                padding-right: 0;
+                
+            }
+            
+        }
+        @media (max-width:450px){
+            img {
+                width: 175px;
+            }
+            .body {
+                font-size: 8px;
+                width:100px;
+            }
+            .navbar {
+                padding-left: 30px;
+                padding-right:30px;
+                height:27px;
+                width:100%;
+            }
+            .nav-outer {
+                padding-left: 25px;
+                padding-right: 20px;
+                height: 85px;
+                padding-bottom: 10px;
+                width:100%;
+            }
+            
+            
+            
+            
+            .end {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                padding-left:30px;
+                padding-right:30px;
+
+            }
+            .end3 {
+                padding-top:15px;
+            }
+            
+            .headlinks.active {
+                margin-top: 400px;               
+            }
+            .head-title {
+                padding-top:60px;
+            }
+            .end1{
+                width:100%;
+                margin-right:0px;
+                padding-left:0px;
+                padding-right:0px;
+            }
+            .end2{
+                width:100%;
+                margin-right:0px;
+                padding-left:0px;
+                padding-right:0px;
+            }
+            .end3{
+                width:100%;
+                margin-right:0px;
+                padding-left:0px;
+                padding-right:0px;
+            }
+            input {
+                height:25px;
+                padding: 0px 15px 0 15px;
+            }
+            #img-logo {
+                 width: 35px;
+            }
+            .submit-btn {
+                height:25px;
+            }
+            .title {
+                font-size:15px;
+            }
+            .options {
+                height:25px;
+                padding-left:15px;
+            }
+            select.options {
+                background-position: calc(100% - 20px) calc(1em + -3px), calc(100% - 15px) calc(1em + -3px), calc(100% - 2.5em) 0.3em;
+                background-size: 3px 3px, 5px 3px, 0.5px 1em;
+            }
+            
+        }
+        a {
+            text-decoration: none;
+        }
+        #search1 {
+            font-size: 22px;
+            color: #666;
+            padding-top: 35px;
+            padding-right: 76px
+        }
+        @media (min-width:1000px){
+            #search1 {
+                display:none;
+            }
+        }
+        @media (max-width:670px){
+            img {
+                width:225px;
+            }
+        }
+        @media (max-width:600px){
+            img {
+                width:200px;
+            }
+            #search {
+                padding-right:60px;
+            }
+        }
+        @media (max-width:1000px){
+            .first {
+                padding: 200px 0px 200px 0px;
+            }
+            .end{
+                flex-wrap:wrap;
+                padding-left:100px;
+                padding-right:100px;
+            }
+            .end1 {
+                width:100%;
+                padding: 0px 0px 20px 0px;
+                margin: 0px 0px 0px 0px;
+            }
+            .end2 {
+                width:100%;
+                padding: 0px 0px 0px 0px;
+                margin: 0px 0px 0px 0px;
+            }
+            .end3 {
+                width:100%;
+                padding: 30px 0px 0px 0px;
+                margin: 0px 0px 0px 0px;
+                
+            }
+            .form-flex {
+                flex-wrap:wrap;
+            }
+            .form-flex1 {
+                width:100%;
+
+            }
+            .form-flex2 {
+                width:100%;
+                padding-left:0px;
+                padding-top:10px;
+            }
+            
+            
+        }
+        @media (max-width:575px) {
+            .first {
+                padding-left:0px;
+                padding-right:0px;
+            }
+            .navbar {
+                padding-left:75px;
+                padding-right:75px;
+            }
+            .toggle-button{
+                right:75px;
+            }
+            #search1 {
+                padding-right:55px;
+            }
+            .end {
+                padding-left:75px;
+                padding-right:75px;
+            }
+            .title {
+                font-size:35px;
+            }
+        }
+        @media (max-width:450px){
+            .first {
+                padding-left:0px;
+                padding-right:0px;
+            }
+            .main-box {
+                width:80%;
+            }
+            
+            .navbar {
+                padding-left:30px;
+                padding-right:30px;
+            }
+            
+            .toggle-button {
+                right: 30px;
+            }
+            .end {
+                padding-left:30px;
+                padding-right:30px;
+            }
+            .end1{
+                width:100%;
+            }
+            .end2{
+                width:100%;
+            }
+            .end3{
+                width:100%;
+            }
+            img {
+                width:175px;
+            }
+            #search1 {
+                padding-top: 60px;
+                padding-right: 60px;
+            }
+        }
+        .imp label{
+            font-size:16px;
+            color:#0096ff;
+        }
+        .imp {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom:30px;
+            padding-top:35px;
+        }
+        #tnc {
+            height:15px;
+        }
+        #butn[type=submit]:disabled { cursor:not-allowed; background:skyblue !important}
+
+        .loader {
+            margin-left:6px;
+            border: 3px solid white;
+            border-radius: 50%;
+            border-top: 3px solid transparent;
+            width: 12px;
+            height: 12px;
+            -webkit-animation: spin 1.55s linear infinite; /* Safari */
+            animation: spin 1.5s linear infinite;
+            visibility:hidden;
+        }
+        .show {
+            visibility:visible;
+        }
+/* Safari */
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        options:selected {
+            color:black;
+        }
+         
+    </style>
+</head>
+<body>
+    <div class="nav-outer">
+        <nav class="navbar">
+        
+            <div class="head-title">
+                <img src="feasibilitypro-logo-25 (1).jpg">
+            </div>
+            <div class="mini-head">
+                <i id="search1" class="fa fa-search" style="font-size:18px; color:#666;"></i>
+                <a href="#" class="toggle-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
+            
+            <div class="headlinks">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>            
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Training</a></li>
+                    <li><a href="#">Consulting</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><i id="search" class="fa fa-search" style="font-size:18px; color:#666; padding-top: 5px;"></i></li>
+                </ul>
+                
+            </div>
+            <!-- <div class="search">
+                <i class="fa fa-search" style="font-size:18px; color:#666; padding-top: 14px;"></i>
+            </div>         -->
+            
+        </nav>
+    </div>
+    <div class="first">
+        <div class="main-box">
+            <div class="logo"><img id="logo-img" src="feasibility.pro(icon).jpg"></div>
+            <div class="main-title">Feasibility.Pro</div>
+            <div class="sub">Sign Up</div>
+            
+            <div class="input-field">
+                <form id="frm">
+                    <div class="form-flex">
+                        <div class="form-flex1">
+                            <input name="full-name" type="text" placeholder="Full name" minlength="5" title="eg. John"  oninput="testFinish();" required>
+                        </div>
+                        
+                        <div class="form-flex2">
+                            <input name="email" type="email" placeholder="Email Address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2, 4}$" title="eg. abc@abc.xyz"  oninput="testFinish();" required>
+                        </div>
+                    </div>
+                    <div class="form-pad"></div>
+                    <div class="form-flex">
+                        <div class="form-flex1">
+                            <input name="phone" placeholder="Phone Number" pattern="[0-9]{10,12}" title="Phone number should be 10 digits longer, starting from non zero digit. eg, 9876543210"  oninput="testFinish();" required>
+                        </div>
+                        
+                        <div class="form-flex2">
+                            <select class="options" name="opt" placeholder="ABC" oninput="testFinish();" onchange="selectOption(this)" required>
+                                <option disabled selected value="0">Organisation Type</option>
+                                <option value="individual">Individual</option>
+                                <option value="organisation">Organisation</option>
+                            </select> 
+                        </div>
+                    </div>
+                    <div id="new2" class="form-pad" style="display:none"></div>
+                    <div class="form-flex">
+                        <div id="new" class="form-flex1"  style="display:none">
+                            <input name="job" type="text" placeholder="Job Title" oninput="testFinish();" required>                        
+                        </div>
+                        <div id="new1" class="form-flex2" style="display:none">
+                            <input name="org" type="text" placeholder="Organisation Name" oninput="testFinish();" required>
+                        </div>
+                    </div>
+                    <div class="form-pad2"></div>
+                    <div class="form-flex">
+                        <div class="form-flex1">
+                            <select class="options" name="opt1" oninput="testFinish();" required>
+                                <option value="0" disabled selected>Country</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="AF">Afghanistan</option>
+                                <option value="AX">Åland Islands</option>
+                                <option value="AL">Albania</option>
+                                <option value="DZ">Algeria</option>
+                                <option value="AS">American Samoa</option>
+                                <option value="AD">Andorra</option>
+                                <option value="AO">Angola</option>
+                                <option value="AI">Anguilla</option>
+                                <option value="AQ">Antarctica</option>
+                                <option value="AG">Antigua and Barbuda</option>
+                                <option value="AR">Argentina</option>
+                                <option value="AM">Armenia</option>
+                                <option value="AW">Aruba</option>
+                                <option value="AU">Australia</option>
+                                <option value="AT">Austria</option>
+                                <option value="AZ">Azerbaijan</option>
+                                <option value="BS">Bahamas</option>
+                                <option value="BH">Bahrain</option>
+                                <option value="BD">Bangladesh</option>
+                                <option value="BB">Barbados</option>
+                                <option value="BY">Belarus</option>
+                                <option value="BE">Belgium</option>
+                                <option value="BZ">Belize</option>
+                                <option value="BJ">Benin</option>
+                                <option value="BM">Bermuda</option>
+                                <option value="BT">Bhutan</option>
+                                <option value="BO">Bolivia, Plurinational State of</option>
+                                <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                                <option value="BA">Bosnia and Herzegovina</option>
+                                <option value="BW">Botswana</option>
+                                <option value="BV">Bouvet Island</option>
+                                <option value="BR">Brazil</option>
+                                <option value="IO">British Indian Ocean Territory</option>
+                                <option value="BN">Brunei Darussalam</option>
+                                <option value="BG">Bulgaria</option>
+                                <option value="BF">Burkina Faso</option>
+                                <option value="BI">Burundi</option>
+                                <option value="KH">Cambodia</option>
+                                <option value="CM">Cameroon</option>
+                                <option value="CV">Cape Verde</option>
+                                <option value="KY">Cayman Islands</option>
+                                <option value="CF">Central African Republic</option>
+                                <option value="TD">Chad</option>
+                                <option value="CL">Chile</option>
+                                <option value="CN">China</option>
+                                <option value="CX">Christmas Island</option>
+                                <option value="CC">Cocos (Keeling) Islands</option>
+                                <option value="CO">Colombia</option>
+                                <option value="KM">Comoros</option>
+                                <option value="CG">Congo</option>
+                                <option value="CD">Congo, the Democratic Republic of the</option>
+                                <option value="CK">Cook Islands</option>
+                                <option value="CR">Costa Rica</option>
+                                <option value="CI">Côte d'Ivoire</option>
+                                <option value="HR">Croatia</option>
+                                <option value="CU">Cuba</option>
+                                <option value="CW">Curaçao</option>
+                                <option value="CY">Cyprus</option>
+                                <option value="CZ">Czech Republic</option>
+                                <option value="DK">Denmark</option>
+                                <option value="DJ">Djibouti</option>
+                                <option value="DM">Dominica</option>
+                                <option value="DO">Dominican Republic</option>
+                                <option value="EC">Ecuador</option>
+                                <option value="EG">Egypt</option>
+                                <option value="SV">El Salvador</option>
+                                <option value="GQ">Equatorial Guinea</option>
+                                <option value="ER">Eritrea</option>
+                                <option value="EE">Estonia</option>
+                                <option value="ET">Ethiopia</option>
+                                <option value="FK">Falkland Islands (Malvinas)</option>
+                                <option value="FO">Faroe Islands</option>
+                                <option value="FJ">Fiji</option>
+                                <option value="FI">Finland</option>
+                                <option value="FR">France</option>
+                                <option value="GF">French Guiana</option>
+                                <option value="PF">French Polynesia</option>
+                                <option value="TF">French Southern Territories</option>
+                                <option value="GA">Gabon</option>
+                                <option value="GM">Gambia</option>
+                                <option value="GE">Georgia</option>
+                                <option value="DE">Germany</option>
+                                <option value="GH">Ghana</option>
+                                <option value="GI">Gibraltar</option>
+                                <option value="GR">Greece</option>
+                                <option value="GL">Greenland</option>
+                                <option value="GD">Grenada</option>
+                                <option value="GP">Guadeloupe</option>
+                                <option value="GU">Guam</option>
+                                <option value="GT">Guatemala</option>
+                                <option value="GG">Guernsey</option>
+                                <option value="GN">Guinea</option>
+                                <option value="GW">Guinea-Bissau</option>
+                                <option value="GY">Guyana</option>
+                                <option value="HT">Haiti</option>
+                                <option value="HM">Heard Island and McDonald Islands</option>
+                                <option value="VA">Holy See (Vatican City State)</option>
+                                <option value="HN">Honduras</option>
+                                <option value="HK">Hong Kong</option>
+                                <option value="HU">Hungary</option>
+                                <option value="IS">Iceland</option>
+                                <option value="IN">India</option>
+                                <option value="ID">Indonesia</option>
+                                <option value="IR">Iran, Islamic Republic of</option>
+                                <option value="IQ">Iraq</option>
+                                <option value="IE">Ireland</option>
+                                <option value="IM">Isle of Man</option>
+                                <option value="IL">Israel</option>
+                                <option value="IT">Italy</option>
+                                <option value="JM">Jamaica</option>
+                                <option value="JP">Japan</option>
+                                <option value="JE">Jersey</option>
+                                <option value="JO">Jordan</option>
+                                <option value="KZ">Kazakhstan</option>
+                                <option value="KE">Kenya</option>
+                                <option value="KI">Kiribati</option>
+                                <option value="KP">Korea, Democratic People's Republic of</option>
+                                <option value="KR">Korea, Republic of</option>
+                                <option value="KW">Kuwait</option>
+                                <option value="KG">Kyrgyzstan</option>
+                                <option value="LA">Lao People's Democratic Republic</option>
+                                <option value="LV">Latvia</option>
+                                <option value="LB">Lebanon</option>
+                                <option value="LS">Lesotho</option>
+                                <option value="LR">Liberia</option>
+                                <option value="LY">Libya</option>
+                                <option value="LI">Liechtenstein</option>
+                                <option value="LT">Lithuania</option>
+                                <option value="LU">Luxembourg</option>
+                                <option value="MO">Macao</option>
+                                <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+                                <option value="MG">Madagascar</option>
+                                <option value="MW">Malawi</option>
+                                <option value="MY">Malaysia</option>
+                                <option value="MV">Maldives</option>
+                                <option value="ML">Mali</option>
+                                <option value="MT">Malta</option>
+                                <option value="MH">Marshall Islands</option>
+                                <option value="MQ">Martinique</option>
+                                <option value="MR">Mauritania</option>
+                                <option value="MU">Mauritius</option>
+                                <option value="YT">Mayotte</option>
+                                <option value="MX">Mexico</option>
+                                <option value="FM">Micronesia, Federated States of</option>
+                                <option value="MD">Moldova, Republic of</option>
+                                <option value="MC">Monaco</option>
+                                <option value="MN">Mongolia</option>
+                                <option value="ME">Montenegro</option>
+                                <option value="MS">Montserrat</option>
+                                <option value="MA">Morocco</option>
+                                <option value="MZ">Mozambique</option>
+                                <option value="MM">Myanmar</option>
+                                <option value="NA">Namibia</option>
+                                <option value="NR">Nauru</option>
+                                <option value="NP">Nepal</option>
+                                <option value="NL">Netherlands</option>
+                                <option value="NC">New Caledonia</option>
+                                <option value="NZ">New Zealand</option>
+                                <option value="NI">Nicaragua</option>
+                                <option value="NE">Niger</option>
+                                <option value="NG">Nigeria</option>
+                                <option value="NU">Niue</option>
+                                <option value="NF">Norfolk Island</option>
+                                <option value="MP">Northern Mariana Islands</option>
+                                <option value="NO">Norway</option>
+                                <option value="OM">Oman</option>
+                                <option value="PK">Pakistan</option>
+                                <option value="PW">Palau</option>
+                                <option value="PS">Palestinian Territory, Occupied</option>
+                                <option value="PA">Panama</option>
+                                <option value="PG">Papua New Guinea</option>
+                                <option value="PY">Paraguay</option>
+                                <option value="PE">Peru</option>
+                                <option value="PH">Philippines</option>
+                                <option value="PN">Pitcairn</option>
+                                <option value="PL">Poland</option>
+                                <option value="PT">Portugal</option>
+                                <option value="PR">Puerto Rico</option>
+                                <option value="QA">Qatar</option>
+                                <option value="RE">Réunion</option>
+                                <option value="RO">Romania</option>
+                                <option value="RU">Russian Federation</option>
+                                <option value="RW">Rwanda</option>
+                                <option value="BL">Saint Barthélemy</option>
+                                <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                                <option value="KN">Saint Kitts and Nevis</option>
+                                <option value="LC">Saint Lucia</option>
+                                <option value="MF">Saint Martin (French part)</option>
+                                <option value="PM">Saint Pierre and Miquelon</option>
+                                <option value="VC">Saint Vincent and the Grenadines</option>
+                                <option value="WS">Samoa</option>
+                                <option value="SM">San Marino</option>
+                                <option value="ST">Sao Tome and Principe</option>
+                                <option value="SA">Saudi Arabia</option>
+                                <option value="SN">Senegal</option>
+                                <option value="RS">Serbia</option>
+                                <option value="SC">Seychelles</option>
+                                <option value="SL">Sierra Leone</option>
+                                <option value="SG">Singapore</option>
+                                <option value="SX">Sint Maarten (Dutch part)</option>
+                                <option value="SK">Slovakia</option>
+                                <option value="SI">Slovenia</option>
+                                <option value="SB">Solomon Islands</option>
+                                <option value="SO">Somalia</option>
+                                <option value="ZA">South Africa</option>
+                                <option value="GS">South Georgia and the South Sandwich Islands</option>
+                                <option value="SS">South Sudan</option>
+                                <option value="ES">Spain</option>
+                                <option value="LK">Sri Lanka</option>
+                                <option value="SD">Sudan</option>
+                                <option value="SR">Suriname</option>
+                                <option value="SJ">Svalbard and Jan Mayen</option>
+                                <option value="SZ">Swaziland</option>
+                                <option value="SE">Sweden</option>
+                                <option value="CH">Switzerland</option>
+                                <option value="SY">Syrian Arab Republic</option>
+                                <option value="TW">Taiwan, Province of China</option>
+                                <option value="TJ">Tajikistan</option>
+                                <option value="TZ">Tanzania, United Republic of</option>
+                                <option value="TH">Thailand</option>
+                                <option value="TL">Timor-Leste</option>
+                                <option value="TG">Togo</option>
+                                <option value="TK">Tokelau</option>
+                                <option value="TO">Tonga</option>
+                                <option value="TT">Trinidad and Tobago</option>
+                                <option value="TN">Tunisia</option>
+                                <option value="TR">Turkey</option>
+                                <option value="TM">Turkmenistan</option>
+                                <option value="TC">Turks and Caicos Islands</option>
+                                <option value="TV">Tuvalu</option>
+                                <option value="UG">Uganda</option>
+                                <option value="UA">Ukraine</option>
+                                <option value="AE">United Arab Emirates</option>
+                                <option value="GB">United Kingdom</option>
+                                <option value="UM">United States Minor Outlying Islands</option>
+                                <option value="UY">Uruguay</option>
+                                <option value="UZ">Uzbekistan</option>
+                                <option value="VU">Vanuatu</option>
+                                <option value="VE">Venezuela, Bolivarian Republic of</option>
+                                <option value="VN">Viet Nam</option>
+                                <option value="VG">Virgin Islands, British</option>
+                                <option value="VI">Virgin Islands, U.S.</option>
+                                <option value="WF">Wallis and Futuna</option>
+                                <option value="EH">Western Sahara</option>
+                                <option value="YE">Yemen</option>
+                                <option value="ZM">Zambia</option>
+                                <option value="ZW">Zimbabwe</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-flex2">
+                            <input name="address" type="text" placeholder="Address" oninput="testFinish();" required>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    <div class="imp">
+                        <div class="remember1" style="padding-top:2px;">
+                            <input name='chk' type="checkbox" id="tnc" oninput="testFinish();">
+                        </div>
+                        <div class="remember2">
+                            <label   style="padding-left:5px;" for="rememberMe">* I agree to all the T&C, Privacy Policy & Cookies policy</label>
+                        </div>
+                        
+                    </div>
+                    
+                    <button name="finish" id="butn" class="submit-btn" type="submit" onclick="buffer()" disabled><div class="buffer" style="display:flex; align-items:center; justify-content:center;">Sign Up<div class="loader" id="loader1"></div></div></button>
+                </form>
+            </div>
+            <div class="already"><a href="signin.html" style="color:#0096FF">Already have an account?</a></div>
+        </div>
+    </div>
+    <div class="end">
+        <div class="end1">
+            <h2>Address</h2>
+            <p style="color: white; padding-top:10px;">5810 AMBLER DRIVE, UNIT 14 MISSISSAUGA, ONTARIO L4W4J5, CANADA</p><br>
+        </div>
+        <div class="end2">
+            <h2>Phone Number</h2>
+            <p style="color: white; padding-top:10px;">+1 24 970 9224</p>
+            <br>
+            <br>
+            <h2>Email</h2>
+            <p style="color: white; padding-top:10px;">info@feasibility.pro</p>
+        </div>
+        <div class="end3">
+            <h2 style="padding-bottom:10px">Follow</h2>
+            <i class="fa fa-facebook" style="font-size:18px; color:white; padding-right:15px"></i>
+            <i class="fa fa-twitter" style="font-size:18px; color:white; padding-right:15px"></i>
+            <i class="fa fa-linkedin" style="font-size:18px; color:white; padding-right:15px"></i>
+            <i class="fa fa-youtube-play" style="font-size:18px;color:white; padding-right:15px"></i>
+        </div>   
+    </div>
+    <script src="script.js"></script>
+    <script type ="text/javascript">
+        
+        function buffer(){
+            document.getElementById("loader1").classList.add("show");
+            var frm=document.getElementById('frm');
+            var name=frm['full-name'].value;
+            var email=frm['email'].value;
+            var phone =frm['phone'].value;
+            var opt=frm['opt'].value;
+            var opt1=frm['opt1'].value;
+            var address=frm['address'].value;
+            document.writeln("Name: "+name+"<br>");
+            document.writeln("Email: "+email+"<br>");
+            document.writeln("Phone: "+phone+"<br>");
+            document.writeln("Organisation Type: "+opt+"<br>");
+            document.writeln("Country: "+opt1+"<br>");
+            document.writeln("Address : "+address+"<br>");
+        }
+        
+    </script>
+</body>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Manage Devices - Feasibility.Pro
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin:0px;
+            padding:0px;
+            box-sizing: border-box;
+        }
+        html,body {
+            width:100%;
+            height:100%;
+            margin:0;
+            padding:0;
+            overflow-x:hidden;
+        }
+        body {
+            margin:0px;
+            padding:0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:14px;
+        }
+        
+        .nav-outer{
+            position: sticky;
+            display:flex;
+            align-items:center;
+            height:85px;
+            width: 100%;
+            top:-34px;
+            background-color: white;
+            -webkit-box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
+            box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
+            z-index:1;
+        }
+        
+        .navbar  {
+            position:sticky; 
+            top:0;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background-color: white;
+            padding-left: 140px;
+            height:51px;
+            padding-right: 150px;
+            width:100%;  
+        }   
+        .headlinks ul {
+            margin:0;
+            padding:0;
+            display:flex;
+        }
+        .headlinks li {
+            list-style:none;
+            padding-right: 0px;
+        }
+        .headlinks li a {
+            text-decoration:none;
+            color: rgb(105, 102, 102);
+            padding-right: 22px;
+            padding-top:15px;
+            display: block;
+            font-weight:bold;
+            font-size:14px;
+        }
+        .headlinks li a:hover {
+            color:rgb(145, 132, 132);
+        }
+        .toggle-button {
+            
+            position:absolute;
+            top: 1.5rem;
+            right: 8em;
+            display:none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height:21px;
+        }
+        .toggle-button .bar {
+            height:3px;
+            width:100%;
+            background-color: #0096ff;
+            border-radius: 10px;
+        }
+
+        #width {
+            width:135%;
+        }
+        @media (max-width: 1000px) {
+            .toggle-button {
+                display:flex;
+                top:2.2em;
+                right:7em;
+            }
+            .headlinks {
+                display:none;
+                width:100%;
+            }
+            .nav-outer {
+                position:absolute;
+                top:0;
+                
+            }
+            .navbar {
+                
+                position:absolute;
+                left:0;
+                padding-left: 100px;
+                padding-right:100px;
+            }
+
+            .headlinks ul {                
+                flex-direction:column;
+            }
+            .search {
+                display:none;
+            }
+            .headlinks.active {
+                display:flex;
+                background-color: white;
+                width:100%;
+                margin-top: 550px;
+                padding-top:50px;
+                padding-left: 50px;
+                padding-bottom: 50px;
+                border-top:10px;
+                border-top-color: rgb(92, 153, 177);
+            }
+            .head-title {
+                padding-top:40px;
+            }
+            #search {
+                display: none;
+            }
+            
+        }
+        #search1 {
+            font-size: 22px;
+            color: #666;
+            padding-top: 35px;
+            padding-right: 76px
+        }
+        @media (min-width:1000px){
+            #search1 {
+                display:none;
+            }
+        }
+        img {
+            width:250px;
+        }
+        .first {
+            background:#f1f1f1;
+            padding:80px 150px;
+        }
+        .head-bar1 {
+            display:flex;
+            align-items:center;
+            justify-content: left;
+            margin: 10px 0px 10px;
+            height:40px;
+            /* background:#fff; */
+            font-size:17px;
+            font-weight:bold;
+            border-radius:5px;
+
+        }
+        .head-bar {
+            display:flex;
+            align-items:center;
+            justify-content: left;
+            font-size:16px;
+            height:40px;
+        }
+        .title {
+            font-size:30px;
+            font-weight:bold;
+        }
+        .t1 {
+            width:30%;
+            text-align:center;
+
+        }
+        .t {
+            width:50%;
+            text-align:center;
+        }
+        .t2 {
+            width:100%;
+            text-align:center;
+        }
+        .t0 {
+            width:100%;
+            text-align:center;
+        }
+        .t3 {
+            width:100%;
+            text-align:center;
+        }
+        .t4 {
+            width:100%;
+            text-align:center;
+        }
+        input {
+            border:none;
+            background-color: transparent;
+            text-align:center;
+        }
+        input::placeholder {
+            color:#000000;
+        }
+        .box {
+            margin-top:50px;
+            background-color: #fff;
+            border-radius:5px;
+            border:none;
+        }
+        .de-reg {
+            background-color: #0096ff;
+            color:#fff;
+            font-weight:bold;
+            font-size:16px;
+            border:none;
+            height:25px;
+            width:115px;
+            border-radius: 3px;
+            cursor:pointer;
+
+        }
+        .end {
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            color: white; 
+            padding-top: 70px;  
+            padding-bottom: 70px; 
+            
+            
+        }
+        .end1 {
+            width: 25%;
+            margin-right: 30px;
+            padding-left:30px;
+            padding-right:30px;
+        }
+        .end2 {
+            width: 25%;
+            margin-left: .2em;
+            margin-right: 30px;
+            padding-left:30px;
+            padding-right:30px;
+        }
+        .end3 {
+            width: auto;
+            margin-left: .2em;
+            padding-left:30px;
+            padding-right:30px;
+        }
+        @media (max-width:1000px){
+           
+            .first {
+                padding: 170px 100px 100px 100px;
+            }
+            .end {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                padding-left:100px;
+                padding-right:100px;
+
+            }
+            .end1 {
+                width:100%;
+                padding-left:0px;
+                padding-right:0px;
+                padding-bottom:20px;
+            }
+            .end2 {
+                width: 100%;
+                padding-left:0px;
+                padding-right:0px;
+                padding-bottom:30px;
+            }
+            .end3 {
+                width: 100%;
+                padding-left:0px;
+                padding-right:0px;
+            }
+            .head-bar1{
+                width:100%;
+            }
+            .head-bar{
+                width:100%;
+            }
+            .t1 {
+                min-width:30px;
+            }
+            .t2 {
+                min-width:200px;
+            }
+            .t3 {
+                min-width:200px;
+            }
+            .t0 {
+                min-width:200px;
+            }
+            .t4 {
+                min-width:200px;
+            }
+            
+        }
+        @media (max-width:575px) {
+            .first {
+                padding-left:75px;
+                padding-right:75px;
+            }
+            .navbar {
+                padding-left:75px;
+                padding-right:75px;
+            }
+            .toggle-button{
+                right:75px;
+            }
+            #search1 {
+                padding-right:55px;
+            }
+            .end {
+                padding-left:75px;
+                padding-right:75px;
+            }
+            .title {
+                font-size:35px;
+            }
+        }
+        @media (max-width:450px){
+            .first {
+                padding-left:30px;
+                padding-right:30px;
+            }
+            
+            .navbar {
+                padding-left:30px;
+                padding-right:30px;
+            }
+            .box3 {
+                padding-left:0px;
+            }
+            
+            .toggle-button {
+                right: 30px;
+            }
+            .end {
+                padding-left:30px;
+                padding-right:30px;
+            }
+            .end1{
+                width:100%;
+            }
+            .end2{
+                width:100%;
+            }
+            .end3{
+                width:100%;
+            }
+            img {
+                width:175px;
+            }
+            #search1 {
+                
+                padding-top: 35px;
+                padding-right: 60px;
+            }
+           
+        }
+        .popUp {
+            /* display: flex; */
+            align-items:center;
+            justify-content: center;
+            flex-wrap:wrap;
+            text-align:center;
+            padding:15px 20px;
+            background-color: #fff;
+            color:black;
+            width:fit-content;
+            height:fit-content;
+            transform: translate(95%,-310%) scale(0.1);
+            visibility:hidden;
+            transition: transform 0.4s;
+            border-radius:5px;
+        }
+        .open-popUp {
+            visibility:visible;
+            transform: translate(95%,-275%) scale(1.4);
+            -webkit-box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.75);
+
+        }
+        .pop-btn {
+            background: #0096ff;
+            color:white;
+            border:none;
+            border-radius:3px;
+            padding:5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-outer">
+        <nav class="navbar">
+        
+            <div class="head-title">
+                <img src="feasibilitypro-logo-25 (1).jpg">
+            </div>
+            <div class="mini-head">
+                <i id="search1" class="fa fa-search" style="font-size:18px; color:#666;"></i>
+                <a href="#" class="toggle-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
+            
+            <div class="headlinks">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>            
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Training</a></li>
+                    <li><a href="#">Consulting</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><i id="search" class="fa fa-search" style="font-size:18px; color:#666; padding-top: 15px;"></i></li>
+                    <li style="padding-right:0px;"><a style="padding-right:0px;" href="#" class="pro-drop"><i class="fa fa-user-circle" style="font-size:18px; color:#666; padding-top: 0px; padding-left:22px; padding-right:0px"></i></a></li>
+                </ul>
+                
+            </div>
+            
+            
+        </nav>
+    </div>
+    <div class="first">
+        <div class="title">Manage Devices</div>
+        <hr>
+        <div>
+            
+            <div class="box" style="overflow-x:auto; table-layout: fixed;">
+                <div class="head-bar1">
+                    <div class="t1">Sr.No</div>
+                    <div class="t2">Mac Address</div>
+                    <div class="t0">License Type</div>
+                    <div class="t0">Subscription Id</div>
+                    <div class="t3">Registration Date & Time</div>
+                    <div class="t4">De-Register</div>
+                </div>
+                <div style="background-color:#f1f1f1; padding-top:10px;"></div>
+                <div class="head-bar">
+                    <div class="t1">1</div>
+                    
+                    <div class="t2">00:00:5e:00:53:af</div>
+                    <div class="t0">License Type</div>
+                    <div class="t0">Subscription Id</div>
+                    <div class="t3">13-09-2022 15:40:30</div>
+                    <div class="t4"><button type="button" onclick="pop()" class="de-reg">De-Register</button></div>
+                </div>
+                <div class="head-bar">
+                    <div class="t1">2</div>
+                    
+                    <div class="t2">00:00:5e:00:53:af</div>
+                    <div class="t0">License Type</div>
+                    <div class="t0">Subscription Id</div>
+                    <div class="t3">13-09-2022 15:40:30</div>
+                    <div class="t4"><button type="button" onclick="pop()" class="de-reg">De-Register</button></div>
+                </div>
+                <div class="head-bar">
+                    <div class="t1">3</div>
+                    
+                    <div class="t2">00:00:5e:00:53:af</div>
+                    <div class="t0">License Type</div>
+                    <div class="t0">Subscription Id</div>
+                    <div class="t3">13-09-2022 15:40:31</div>
+                    <div class="t4"><button type="button" onclick="pop()" class="de-reg">De-Register</button></div>
+                </div>
+                <div class="head-bar">
+                    <div class="t1">4</div>
+                    
+                    <div class="t2">00:00:5e:00:53:af</div>
+                    <div class="t0">License Type</div>
+                    <div class="t0">Subscription Id</div>
+                    <div class="t3">13-09-2022 15:40:30</div>
+                    <div class="t4"><button type="button" onclick="pop()" class="de-reg">De-Register</button></div>
+                </div>
+                <div class="head-bar">
+                    <div class="t1">5</div>
+                    
+                    <div class="t2">00:00:5e:00:53:af</div>
+                    <div class="t0">License Type</div>
+                    <div class="t0">Subscription Id</div>
+                    <div class="t3">13-09-2022 15:40:30</div>
+                    <div class="t4"><button type="button" onclick="pop()" class="de-reg">De-Register</button></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div style="background-color: #f1f1f1;">
+        <div class="popUp" id="popUp">
+            <p style="padding-bottom:20px; padding-top:2px; line-height: 20px;">Are you sure to de-register the device?<br> You will no longer be able to access Feasibility.Pro Client through that device.</p>
+            <button type="submit" class="pop-btn" onclick="pop1()">Confirm</button>
+        </div>
+    </div>
+    <div class="end">
+        <div class="end1">
+            <h2>Address</h2>
+            <p style="color: white; padding-top:10px;">5810 AMBLER DRIVE, UNIT 14 MISSISSAUGA, ONTARIO L4W4J5, CANADA</p><br>
+        </div>
+        <div class="end2">
+            <h2>Phone Number</h2>
+            <p style="color: white; padding-top:10px;">+1 24 970 9224</p>
+            <br>
+            <br>
+            <h2>Email</h2>
+            <p style="color: white; padding-top:10px;">info@feasibility.pro</p>
+        </div>
+        <div class="end3">
+            <h2 style="padding-bottom:10px">Follow</h2>
+            <i class="fa fa-facebook" style="font-size:18px; color:white; padding-right:15px ; padding-left:0px;"></i>
+            <i class="fa fa-twitter" style="font-size:18px; color:white; padding-right:15px;  padding-left:0px;"></i>
+            <i class="fa fa-linkedin" style="font-size:18px; color:white; padding-right:15px;  padding-left:0px;"></i>
+            <i class="fa fa-youtube-play" style="font-size:18px;color:white; padding-right:15px; padding-left:0px;"></i>
+        </div>   
+    </div>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        function pop(){
+            document.getElementById('popUp').classList.add("open-popUp");
+            document.getElementsById('loader1').classList.add("show");
+        }
+        function pop1(){
+            document.getElementById('popUp').classList.remove("open-popUp");
+        }
+    </script>
+</body>

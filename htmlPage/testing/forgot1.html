@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forgotten Password - Feasibility.Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="nav-outer">
+        <nav class="navbar">
+        
+            <div class="head-title">
+                <img src="feasibilitypro-logo-25 (1).jpg">
+            </div>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="headlinks">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>            
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Training</a></li>
+                    <li><a href="#">Consulting</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><i id="search" class="fa fa-search" style="font-size:18px; color:#666; padding-top: 5px;"></i></li>
+                </ul>
+                
+            </div>
+        </nav>
+    </div>
+    <div class="first">
+        <div class="main-box">
+            <div class="inner-box">
+                <div class="logo"><img class="img-logo" src="feasibility.pro(icon).jpg"></div>
+                <div class="title">Feasibility Pro</div>
+                <div class="title1">Forgot Password</div>
+                <div class="input-field">
+                    <form id="frm">
+                        <input placeholder="Email Address" name="email" type="email" oninput="forgot();" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2, 4}$" title="eg. abc@abc.xyz" required>
+                        <div class="send"><button id='butn' class="submit-btn" type="button" data-toggle="modal" data-target="#myModal" onclick="fun()">Send</button></div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-primary" id="sty" role="alert">
+            This is a primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>       
+    </div>
+    
+    
+    <div class="end">
+        <div class="end1">
+            <h2>Address</h2>
+            <p style="color: white; padding-top:10px;">5810 AMBLER DRIVE, UNIT 14 MISSISSAUGA, ONTARIO L4W4J5, CANADA</p><br>
+        </div>
+        <div class="end2">
+            <h2>Phone Number</h2>
+            <p style="color: white; padding-top:10px;">+1 24 970 9224</p>
+            <br>
+            <br>
+            <h2>Email</h2>
+            <p style="color: white; padding-top:10px;">info@feasibility.pro</p>
+        </div>
+        <div class="end3">
+            <h2 style="padding-bottom:10px">Follow</h2>
+            <i class="fa fa-facebook" style="font-size:18px; color:white; padding-right:15px"></i>
+            <i class="fa fa-twitter" style="font-size:18px; color:white; padding-right:15px"></i>
+            <i class="fa fa-linkedin" style="font-size:18px; color:white; padding-right:15px"></i>
+            <i class="fa fa-youtube-play" style="font-size:18px;color:white; padding-right:15px"></i>
+        </div>   
+    </div>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        function fun(){
+            document.getElementById('sty').style.visibility="visible";
+        }
+    </script>
+</body>
+
+
+</html>
