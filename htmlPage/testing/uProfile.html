@@ -376,6 +376,44 @@
                 padding-right: 60px;
             }
         }
+        .drop-dwn {
+        float: left;
+        overflow: hidden;
+        }
+        .drp-dwn .drp-btn {
+            cursor: pointer;
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            /* padding: 14px 16px; */
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .profile {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .profile ul {
+            display: flex;
+            flex-direction:column;
+        }
+        .profile a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .show {
+            display: block;
+        }
        
     </style>
 </head>
@@ -404,7 +442,19 @@
                     <li><a href="#">Training</a></li>
                     <li><a href="#">Consulting</a></li>
                     <li><a href="#">Contact Us</a></li>
-                    <li><i id="search" class="fa fa-search" style="font-size:18px; color:#666; padding-top: 5px;"></i></li>
+                    <li><i id="search" class="fa fa-search" style="font-size:18px; color:#666; padding-top: 5px; padding-right:22px;"></i></li>
+                    <div class="drp-dwn">
+                        <button type="button" class="drp-btn" onclick="myFunc1();">
+                            <i class="fa fa-user-circle-o" style="font-size:20px; color:#666; padding-top: 5px;"></i>
+                        </button>
+                        <div class="profile" id="myPro">
+                            <ul>
+                                <li><a href="installer2.html">Installer</a></li>
+                                <li><a href="devices.html">Manage Devices</a></li>
+                                <li><a href="signin.html">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
                     
                 </ul>
                 
@@ -782,6 +832,25 @@
             var opt1=frm['country'].value;
             var address=frm['address'].value;
             document.writeln(`Your updated info is: \n Organisation Type : ${opt} \n Country : ${opt1} \n Address : ${address}`)
+        }
+
+        function myFunc1() {
+            document.getElementById("myPro").classList.toggle("show");
+        }
+
+
+        toggleButton.addEventListener('click', ()=>{
+            navbarLinks.classList.toggle('active')
+        })
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+            if (!e.target.matches('.drp-btn')) {
+                var myPro = document.getElementById("myPro");
+                if (myPro.classList.contains('show')) {
+                    myPro.classList.remove('show');
+                }
+            }
         }
     </script>
 </body>
