@@ -5,395 +5,7 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        * {
-            margin:0;
-            padding:0;
-            box-sizing: border-box;
-        }
-        body {
-            margin:0;
-            padding:0;
-            font-size:14px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .nav-outer{
-            position: sticky;
-            display:flex;
-            align-items:center;
-            height:85px;
-            width: 100%;
-            top:-34px;
-            background-color: white;
-            -webkit-box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
-            -moz-box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
-            box-shadow: 10px 0px 18px -7px rgba(0,0,0,0.75);
-            z-index:1;
-        }
-        
-        .navbar  {
-            position:sticky; 
-            top:0;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            background-color: white;
-            padding-left: 140px;
-            height:51px;
-            padding-right: 150px;
-            width:100%;  
-        }   
-        .headlinks ul {
-            margin:0;
-            padding:0;
-            display:flex;
-        }
-        .headlinks li {
-            list-style:none;
-            padding-right: 0px;
-        }
-        .headlinks li a {
-            text-decoration:none;
-            color: rgb(105, 102, 102);
-            padding-right: 22px;
-            padding-top:20px;
-            display: block;
-            font-weight:bold;
-            font-size:14px;
-        }
-        .headlinks li a:hover {
-            color:rgb(145, 132, 132);
-        }
-        .toggle-button {
-            
-            position:absolute;
-            top: 1.5rem;
-            right: 8em;
-            display:none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height:21px;
-        }
-        .toggle-button .bar {
-            height:3px;
-            width:100%;
-            background-color: #0096ff;
-            border-radius: 10px;
-        }
-
-        #width {
-            width:135%;
-        }
-        @media (max-width: 1000px) {
-            .toggle-button {
-                display:flex;
-                top:2.2em;
-                right:7em;
-            }
-            .headlinks {
-                display:none;
-                width:100%;
-            }
-            .nav-outer {
-                position:absolute;
-                top:0;
-                
-            }
-            .navbar {
-                
-                position:absolute;
-                left:0;
-                padding-left: 100px;
-                padding-right:100px;
-            }
-
-            .headlinks ul {                
-                flex-direction:column;
-            }
-            .search {
-                display:none;
-            }
-            .headlinks.active {
-                display:flex;
-                background-color: white;
-                width:100%;
-                margin-top: 550px;
-                padding-top:50px;
-                padding-left: 50px;
-                padding-bottom: 50px;
-                border-top:10px;
-                border-top-color: rgb(92, 153, 177);
-            }
-            .head-title {
-                padding-top:40px;
-            }
-            #search {
-                display: none;
-            }
-            
-        }
-        .first {
-            background-color: #f1f1f1;
-            padding: 100px 140px 100px 140px;
-        }
-        .mainbox {
-            display:flex;
-        }
-        .partition{
-            width:100%;
-        
-        }
-        .innerbox {
-            display:flex;
-            width:100%;
-        }
-        .box2 {
-            padding: 10px 10px 10px 20px;
-        }
-        .box3 {
-            padding: 60px 0px 0px 10px;
-        }
-        .title1 {
-            font-size:28px;
-            font-weight:bold;
-        }
-        .title2 {
-            font-size:20px;
-            color: #777;
-            padding:20px 0px 20px 0px;
-            line-height:30px;
-        }
-        .title3 {
-            font-size:18px;
-            font-weight:bold;
-            text-decoration: none;
-        }
-        .title4 {
-            font-size:25px;
-            padding-bottom:27px;
-            font-weight:bold;
-        }
-        .title5 {
-            padding-left:18px;
-        }
-        a {
-            text-decoration: none;
-        }
-        #center-margin {
-            border-right:1px solid #777;
-            padding-right:35px;
-        }
-        #symbol {
-            width:110px;
-        }
-        li {
-            color:#777;
-            font-size:20px;
-            padding-bottom:15px;
-            line-height:30px;
-        }
-        img {
-            width:250px;
-        }
-        .end {
-            display: flex;
-            justify-content: center;
-            background-color: black;
-            color: white; 
-            padding-top: 70px;  
-            padding-bottom: 70px; 
-            
-            
-        }
-        .end1 {
-            width: 25%;
-            margin-right: 30px;
-            padding-left:30px;
-            padding-right:30px;
-        }
-        .end2 {
-            width: 25%;
-            margin-left: .2em;
-            margin-right: 30px;
-            padding-left:30px;
-            padding-right:30px;
-        }
-        .end3 {
-            width: auto;
-            margin-left: .2em;
-            padding-left:30px;
-            padding-right:30px;
-        }
-        #search1 {
-            font-size: 22px;
-            color: #666;
-            padding-top: 35px;
-            padding-right: 76px
-        }
-        @media (min-width:1000px){
-            #search1 {
-                display:none;
-            }
-        }
-        @media (max-width:1000px){
-            .mainbox {
-                flex-wrap:wrap;
-            }
-            #center-margin {
-                border-right:none;
-            }
-            .box3 {
-                padding: 60px 10px 10px 7px;
-            }
-            .first {
-                padding: 170px 100px 100px 100px;
-            }
-            .end {
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-                padding-left:100px;
-                padding-right:100px;
-
-            }
-            .end1 {
-                width:100%;
-                padding-left:0px;
-                padding-right:0px;
-            }
-            .end2 {
-                width: 100%;
-                padding-left:0px;
-                padding-right:0px;
-                padding-bottom:15px;
-            }
-            .end3 {
-                width: 100%;
-                padding-left:0px;
-                padding-right:0px;
-            }
-            #part2 {
-                padding-left:0px;
-            }
-        }
-        @media (max-width:575px) {
-            .first {
-                padding-left:75px;
-                padding-right:75px;
-            }
-            .navbar {
-                padding-left:75px;
-                padding-right:75px;
-            }
-            .toggle-button{
-                right:75px;
-            }
-            #search1 {
-                padding-right:55px;
-            }
-            .end {
-                padding-left:75px;
-                padding-right:75px;
-            }
-            .title {
-                font-size:35px;
-            }
-        }
-        @media (max-width:450px){
-            .first {
-                padding-left:30px;
-                padding-right:30px;
-            }
-            #symbol {
-                width:50px;
-            }
-            .box2 {
-                padding-top:0px;
-            }
-            .navbar {
-                padding-left:30px;
-                padding-right:30px;
-            }
-            .box3 {
-                padding-left:0px;
-            }
-            .title5 {
-                padding-left:18px;
-            }
-            .toggle-button {
-                right: 30px;
-            }
-            .end {
-                padding-left:30px;
-                padding-right:30px;
-            }
-            .end1{
-                width:100%;
-            }
-            .end2{
-                width:100%;
-            }
-            .end3{
-                width:100%;
-            }
-            img {
-                width:175px;
-            }
-            #search1 {
-                
-                padding-top: 35px;
-                padding-right: 60px;
-            }
-            #part2 {
-                padding-left:0px;
-            }
-        }
-        .dload {
-            font-size:18px;
-            border:none;
-            background-color: #0096ff;
-            color:white;
-            padding:10px 15px 10px 15px;
-            border-radius:4px;
-            font-weight:bold
-        }
-        .dload:hover {
-            background-color: #0181dd;
-            cursor:pointer;
-        }
-        #part2 {
-            padding: 10px 0px 0px 50px;
-        }
-        @media (max-width:1000px){
-            #part2 {
-                padding: 60px 0px 0px 0px;
-            }
-        }
-        #h2 {
-            font-size:20px;
-            padding-bottom:10px;
-        }
-        p{
-        font-size:17px;
-        color:#777;
-        line-height:25px;
-        padding-bottom:14px;
-        }
-        .icn-config {
-            display:flex;
-        }
-        #br-gap {
-            padding-top:40px;
-        }
-        i {
-            padding:8px;
-        }
-        /* .icn1 {
-            background-color:#7bdcb5;
-        } */
-
-    </style>
+    <link rel="stylesheet" href="installer.css">
 </head>
 <body>
     <div class="nav-outer">
@@ -420,7 +32,19 @@
                     <li><a href="#">Training</a></li>
                     <li><a href="#">Consulting</a></li>
                     <li><a href="#">Contact Us</a></li>
-                    <li><i id="search" class="fa fa-search" style="font-size:18px; color:#666; padding-top: 20px;"></i></li>
+                    <li><i id="search" class="fa fa-search" style="font-size:18px; color:#666; padding-top: 20px; padding-right:22px;"></i></li>
+                    <div class="drp-dwn">
+                        <button type="button" class="drp-btn" onclick="myFunc1();">
+                            <i class="fa fa-user-circle-o" style="font-size:20px; color:#666; padding-top: 20px; padding-left:0px;"></i>
+                        </button>
+                        <div class="profile" id="myPro">
+                            <ul>
+                                <li><a href="installer2.html">Installer</a></li>
+                                <li><a href="devices.html">Manage Devices</a></li>
+                                <li><a href="signin.html">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </ul>
                 
             </div>
@@ -459,7 +83,22 @@
                 </div>
             </div>
             <div class="partition" id="part2">
-                <h3 id="h2">Call Us</h3>
+                <h3 id="h2" style="padding-bottom:25px; color:#333333">Manage Device</h3>
+                    
+                    <!-- <i class="fa fa-laptop" style="font-size:18px; padding:7px 12px; color:#ea6c01; background:rgba(243,108,1,0.11); border-radius:100%;"></i> -->
+                
+                <div class="icn-config">
+                    <div class="icn1">
+                        <i class="fa fa-laptop" style="font-size:18px; padding:8px 8px; color:#ea6c01; background:rgba(243,108,1,0.11); border-radius:100%;"></i>
+                    </div>
+                    <div class="icn" style="padding-left:20px;">
+                        <!-- <h3 style="color:#777;  font-size:17px;">Mac Address:</h3>
+                        <input id="mac" type="text" placeholder="00:00:5e:00:53:af" disabled><br>
+                        <button id="deregister" type="submit">De-register</button> -->
+                        <button id="deregister" type="button"><a href="devices.html" style="color:white; text-decoration: none;">Click Here</a></button>
+                    </div>
+                </div>
+                <!-- <h3 id="h2">Call Us</h3>
                 <p>Give us a call. We're here for you 24/7.</p>
                 
                 <p>International phone charges may apply, depending on your carrier and calling plan. Some international numbers may not work from mobile phones.</p>
@@ -471,9 +110,9 @@
                     <div class="icn">
                         <p1 style="color:#ea6c01; font-weight: bold; margin-left: 20px;  line-height:32px;">+1 24 970 9224</p1>
                     </div>
-                </div>
+                </div> -->
                 
-                <div id="br-gap"></div>
+                <!-- <div id="br-gap"></div>
                 
                 <h3 id="h2">Visit Us</h3>
                 
@@ -488,10 +127,10 @@
                     <div class="icn" style="padding-left:20px;">
                         <p1 style="color:#ea6c01; font-weight: bold; line-height: 32px;">5810 AMBLER DRIVE, UNIT 14 MISSISSAUGA, ONTARIO L4W4J5, CANADA</p1>
                     </div>
-                </div>
+                </div> -->
                 
                 <div id="br-gap"></div>
-                <h3 id="h2">Live Chat</h3>
+                <h3 id="h2" style="color:#333333">Live Chat</h3>
                 
                 <p>We're just one click away to help you make your project feasible.</p>
                 
@@ -536,4 +175,24 @@
         </div>   
     </div>
     <script src="script.js"></script>
+    <script>
+        function myFunc1() {
+            document.getElementById("myPro").classList.toggle("show");
+        }
+
+
+        toggleButton.addEventListener('click', ()=>{
+            navbarLinks.classList.toggle('active')
+        })
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+            if (!e.target.matches('.drp-btn')) {
+                var myPro = document.getElementById("myPro");
+                if (myPro.classList.contains('show')) {
+                    myPro.classList.remove('show');
+                }
+            }
+        }
+    </script>
 </body>

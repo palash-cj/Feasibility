@@ -110,9 +110,11 @@ var check = function() {
       if(that.value=="organisation"){
         document.getElementById("new1").style.display="block";
         document.getElementById("new").style.display="block";
+        document.getElementById("new2").style.display="block";
       }else {
         document.getElementById("new1").style.display="none";
         document.getElementById("new").style.display="none";
+        document.getElementById("new2").style.display="none";
       }
      } 
     

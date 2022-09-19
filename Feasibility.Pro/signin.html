@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-
 <head>
-    <title>Reset Password - Feasibility.Pro</title>
+    <title>Sign In - Feasibility.Pro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="signin.css">
 </head>
 <body>
     <div class="nav-outer">
         <nav class="navbar">
         
             <div class="head-title">
-                <img id="main-logo" src="feasibilitypro-logo-25 (1).jpg">
+                <img src="feasibilitypro-logo-25 (1).jpg">
             </div>
-            <div class="mini-head">
+            <a href="#" class="toggle-button">
                 <i id="search1" class="fa fa-search" style="font-size:18px; color:#666;"></i>
-                <a href="#" class="toggle-button">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </a>
-            </div>
+
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
             <div class="headlinks">
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -34,24 +32,39 @@
                 </ul>
                 
             </div>
-            
+            <!-- <div class="search">
+                <i class="fa fa-search" style="font-size:18px; color:#666; padding-top: 14px;"></i>
+            </div>         -->
             
         </nav>
     </div>
     <div class="first">
         <div class="main-box">
             <div class="inner-box">
-                <div class="logo"><img class="img-logo" src="feasibility.pro(icon).jpg"></div>
-                <div class="title">Feasibility.Pro</div>
-                <div class="title1">Reset Password</div>
+                <div class="logo"><img id="img-logo" src="feasibility.pro(icon).jpg"></div>
+                <div class="title" >Feasibility.Pro</div>
+                <div class="sub">Sign In</div>
                 <div class="input-field">
                     <form id="frm">
-                        <input id="passwd" placeholder="New Password" name="password" type="password"  onkeyup='check();' oninput="testReset();" required>
-                        <input id="confirm_passwd" placeholder="Re-enter New Password" name="re-password" type="password"  onkeyup='check();' oninput="testReset();"required>
-                        <span id='message'></span>
-                        <button class="submit-btn" name="finish" id="butn" type="submit" onclick="buffer()" disabled><div class="buffer" style="display:flex; align-items:center; justify-content:center;">Save<div class="loader" id="loader1"></div></div></button>
+                        <!-- <i class="fa fa-user-circle-o icon"></i> -->
+                        <input id="outline" class="input-icon" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2, 4}$" title="eg. abc@abc.xyz" placeholder="Your Email" oninput="check1()">
+                        <div id="email-input"></div>
+                        <!-- <i class="fa fa-lock icon1"></i> -->
+                        <input id="outline" class="input-icon" type="password" name="password" pattern="{7,20}" placeholder="Enter Password" oninput="check1()">
+                        <div class="imp">
+                            <div class="remember1">
+                                <input type="checkbox" value="lsRememberMe" id="rememberMe" oninput="check1()"> <label style="padding-left:5px;" for="rememberMe">Remember me</label>
+                            </div>
+                            <div class="remember2">
+                                <p href="#">Forgot Password?</p>
+                            </div>
+                            
+                        </div>
+                        
+                        <button name="login" id="butn" class="submit-btn" type="submit"  onclick="buffer()" disabled><div class="buffer" style="display:flex; align-items:center; justify-content:center;">Sign In<div class="loader" id="loader1"></div></div></button>
                     </form>
                 </div>
+                <div class="new-user">Don’t have an account?&nbsp <a href="register.html" style="color:#0096ff">Sign Up</a> </div>
             </div>
         </div>
     </div>
@@ -83,4 +96,3 @@
         }
     </script>
 </body>
-

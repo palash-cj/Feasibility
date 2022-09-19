@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Manage Devices - Feasibility.Pro
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="devices.css">
+</head>
+<body>
+    <div class="nav-outer">
+        <nav class="navbar">
+        
+            <div class="head-title">
+                <img src="feasibilitypro-logo-25 (1).jpg">
+            </div>
+            <div class="mini-head">
+                <i id="search1" class="fa fa-search" style="font-size:18px; color:#666;"></i>
+                <a href="#" class="toggle-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
+            
+            <div class="headlinks">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>            
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Training</a></li>
+                    <li><a href="#">Consulting</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><i id="search" class="fa fa-search" style="font-size:18px; color:#666; padding-top: 5px; padding-right:22px;"></i></li>
+                    <!-- <li style="padding-right:0px;"><a style="padding-right:0px;" href="#" class="pro-drop"><i class="fa fa-user-circle" style="font-size:18px; color:#666; padding-top: 0px; padding-left:22px; padding-right:0px"></i></a></li> -->
+                    <div class="drp-dwn">
+                        <button type="button" class="drp-btn" onclick="myFunc1();">
+                            <i class="fa fa-user-circle-o" style="font-size:20px; color:#666; padding-top: 5px;"></i>
+                        </button>
+                        <div class="profile" id="myPro">
+                            <ul>
+                                <li><a href="installer2.html">Installer</a></li>
+                                <li><a href="uProfile.html">Edit Profile</a></li>
+                                <li><a href="signin.html">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </ul>
+                
+            </div>
+            
+            
+        </nav>
+    </div>
+    <div class="first">
+        <div class="title">Manage Devices</div>
+        <hr>
+        <div>
+            
+            <div class="box" style="overflow-x:auto; table-layout: fixed;">
+                <div class="head-bar1">
+                    <div class="t1">Sr.No</div>
+                    <div class="t2">Mac Address</div>
+                    <div class="t0">License Type</div>
+                    <div class="t0">Subscription Id</div>
+                    <div class="t3">Registration Date & Time</div>
+                    <div class="t4">De-Register</div>
+                </div>
+                <!-- <div style="background-color:#f1f1f1; padding-top:10px; overflow-x:auto; table-layout: fixed;"></div> -->
+                <div class="head-bar">
+                    <div class="t1">1</div>
+                    
+                    <div class="t2">00:00:5e:00:53:af</div>
+                    <div class="t0">License Type</div>
+                    <div class="t0">Subscription Id</div>
+                    <div class="t3">13-09-2022 15:40:30</div>
+                    <div class="t4"><button type="button" onclick="pop()" class="de-reg">De-Register</button></div>
+                </div>
+                <div class="head-bar">
+                    <div class="t1">2</div>
+                    
+                    <div class="t2">00:00:5e:00:53:af</div>
+                    <div class="t0">License Type</div>
+                    <div class="t0">Subscription Id</div>
+                    <div class="t3">13-09-2022 15:40:30</div>
+                    <div class="t4"><button type="button" onclick="pop()" class="de-reg">De-Register</button></div>
+                </div>
+                <div class="head-bar">
+                    <div class="t1">3</div>
+                    
+                    <div class="t2">00:00:5e:00:53:af</div>
+                    <div class="t0">License Type</div>
+                    <div class="t0">Subscription Id</div>
+                    <div class="t3">13-09-2022 15:40:31</div>
+                    <div class="t4"><button type="button" onclick="pop()" class="de-reg">De-Register</button></div>
+                </div>
+                <div class="head-bar">
+                    <div class="t1">4</div>
+                    
+                    <div class="t2">00:00:5e:00:53:af</div>
+                    <div class="t0">License Type</div>
+                    <div class="t0">Subscription Id</div>
+                    <div class="t3">13-09-2022 15:40:30</div>
+                    <div class="t4"><button type="button" onclick="pop()" class="de-reg">De-Register</button></div>
+                </div>
+                <div class="head-bar">
+                    <div class="t1">5</div>
+                    
+                    <div class="t2">00:00:5e:00:53:af</div>
+                    <div class="t0">License Type</div>
+                    <div class="t0">Subscription Id</div>
+                    <div class="t3">13-09-2022 15:40:30</div>
+                    <div class="t4"><button type="button" onclick="pop()" class="de-reg">De-Register</button></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div style="background-color: #f1f1f1;">
+        <div class="popUp" id="popUp">
+            <div class="cross">
+                <button style="padding:0px 2px;" onclick="pop1()" style="cursor:pointer;"><i class="fa fa-close" style="font-size:18px; color:#666;"></i></button>
+            </div>
+            <div class="confirm">
+                <p style="padding-bottom:20px; line-height: 20px;">Are you sure to de-register the device?<br> You will no longer be able to access Feasibility.Pro Client through that device.</p>
+                <button type="submit" class="pop-btn" onclick="pop1()">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <div class="end">
+        <div class="end1">
+            <h2>Address</h2>
+            <p style="color: white; padding-top:10px;">5810 AMBLER DRIVE, UNIT 14 MISSISSAUGA, ONTARIO L4W4J5, CANADA</p><br>
+        </div>
+        <div class="end2">
+            <h2>Phone Number</h2>
+            <p style="color: white; padding-top:10px;">+1 24 970 9224</p>
+            <br>
+            <br>
+            <h2>Email</h2>
+            <p style="color: white; padding-top:10px;">info@feasibility.pro</p>
+        </div>
+        <div class="end3">
+            <h2 style="padding-bottom:10px">Follow</h2>
+            <i class="fa fa-facebook" style="font-size:18px; color:white; padding-right:15px ; padding-left:0px;"></i>
+            <i class="fa fa-twitter" style="font-size:18px; color:white; padding-right:15px; padding-left:0px;"></i>
+            <i class="fa fa-linkedin" style="font-size:18px; color:white; padding-right:15px;  padding-left:0px;"></i>
+            <i class="fa fa-youtube-play" style="font-size:18px;color:white; padding-right:15px; padding-left:0px;"></i>
+        </div>   
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function pop(){
+            document.getElementById('popUp').classList.add("open-popUp");
+        }
+        function pop1(){
+            document.getElementById('popUp').classList.remove("open-popUp");
+        }
+
+        function myFunc1() {
+            document.getElementById("myPro").classList.toggle("show");
+        }
+
+
+        // toggleButton.addEventListener('click', ()=>{
+        //     navbarLinks.classList.toggle('active')
+        // })
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+            if (!e.target.matches('.drp-btn')) {
+                var myPro = document.getElementById("myPro");
+                if (myPro.classList.contains('show')) {
+                    myPro.classList.remove('show');
+                }
+            }
+        }
+    </script>
+</body>

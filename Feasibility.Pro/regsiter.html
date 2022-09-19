@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <head>
-    <title>Trial Pack Sign Up - Feasibility.Pro</title>
+    <title>
+        Register - Feasibility.Pro
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="trial.css">
-    <script src="script.js" defer></script>
+
+    <link rel="stylesheet" href="register.css">
 </head>
 <body>
     <div class="nav-outer">
@@ -21,6 +23,7 @@
                     <span class="bar"></span>
                 </a>
             </div>
+            
             <div class="headlinks">
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -40,94 +43,50 @@
             
         </nav>
     </div>
-    <div class="first"">
-
-        
-
-        <div class="title">Sign up for free trial</div>
-
-        <div class="flex-part">
-            <div id="width" id="line" class="flex-itm">
-                
-
+    <div class="first">
+        <div class="main-box">
+            <div class="logo"><img id="logo-img" src="feasibility.pro(icon).jpg"></div>
+            <div class="main-title">Feasibility.Pro</div>
+            <div class="sub">Sign Up</div>
+            
+            <div class="input-field">
                 <form id="frm">
-                    <div class="flex-form">
+                    <div class="form-flex">
+                        <div class="form-flex1">
+                            <input name="full-name" type="text" placeholder="Full name" minlength="5" title="eg. John"  oninput="testFinish();" required>
+                        </div>
                         
-                            <input id="h0" style="
-                            
-                                border: 0;
-                                border-bottom: 3px solid black;
-                                background: transparent;
-                                padding: 0px 5px 15px 0;
-                                width: 100%;
-                                font-weight: bold;
-                                color:black;
-                                margin-bottom: 20px;
-                            
-                            " class="outline" placeholder="Full Name" name="fullname" type="text" required>
-
-                            <input id="h0" style="
-                            
-                                border: 0;
-                                border-bottom: 3px solid black;
-                                background: transparent;
-                                padding: 5px 5px 15px 0;
-                                width: 100%;
-                                font-weight: bold;
-                                color:black;
-                                margin-bottom: 20px;
-
-                            " class="outline" placeholder="Email" name="email" type="email"  required>
-
-                            <input id="h0" style="
-                                width: 48%;
-                                border: 0;
-                                border-bottom: 3px solid black;
-                                color:black;
-                                background: transparent;
-                                padding: 5px 5px 15px 0;
-                                width: 100%;
-                                font-weight:bold;
-                                margin-bottom: 20px;
-                            " class="outline" placeholder="Phone Number" name="phone" type="text"  required>
-
-                            <select style="padding: 5px 0px 15px 0px; width:100%;" name="opt1" class="options"  onchange="selectOption1(this)" required>
-                                <option value="0" disabled selected>Organisation Type</option>
-                                <option value="11">Individual</option>
-                                <option value="12">Organisation</option>
-                            </select>
-
-                            <input id="job" style="
-                                                        
-                                border: 0;
-                                border-bottom: 3px solid black;
-                                background: transparent;
-                                padding: 20px 5px 15px 0;
-                                width: 100%;
-                                font-weight: bold;
-                                color:black;
-                                margin-bottom: 20px;
-                                display:none;
-
-                            " class="outline" placeholder="Job Title" name="job" type="text" required>
-
-                            <input id="org" style="
-                            
-                                border: 0;
-                                border-bottom: 3px solid black;
-                                background: transparent;
-                                padding: 5px 5px 15px 0;
-                                width: 100%;
-                                font-weight: bold;
-                                color:black;
-                                margin-bottom: 20px;
-                                display:none;
-
-                            " class="outline" placeholder="Company" name="company" type="text" required>
-
-                            <div id="pad" style="padding-top:20px; display:block;"></div>
-                           
-                            <select style="padding: 5px 0px 15px 0px; width:100%;" class="options" name="opt" required>
+                        <div class="form-flex2">
+                            <input name="email" type="email" placeholder="Email Address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2, 4}$" title="eg. abc@abc.xyz"  oninput="testFinish();" required>
+                        </div>
+                    </div>
+                    <div class="form-pad"></div>
+                    <div class="form-flex">
+                        <div class="form-flex1">
+                            <input name="phone" placeholder="Phone Number" pattern="[0-9]{10,12}" title="Phone number should be 10 digits longer, starting from non zero digit. eg, 9876543210"  oninput="testFinish();" required>
+                        </div>
+                        
+                        <div class="form-flex2">
+                            <select class="options" name="opt" placeholder="ABC" oninput="testFinish();" onchange="selectOption(this)" required>
+                                <option disabled selected value="0">Organisation Type</option>
+                                <option value="individual">Individual</option>
+                                <option value="organisation">Organisation</option>
+                            </select> 
+                        </div>
+                    </div>
+                    <div id="new2" class="form-pad" style="display:none"></div>
+                    <div class="form-flex">
+                        <div id="new" class="form-flex1"  style="display:none">
+                            <input name="job" type="text" placeholder="Job Title" oninput="testFinish();" required>                        
+                        </div>
+                        <div id="new1" class="form-flex2" style="display:none">
+                            <input name="org" type="text" placeholder="Organisation Name" oninput="testFinish();" required>
+                        </div>
+                    </div>
+                    <div class="form-pad2"></div>
+                    <div class="form-flex">
+                        <div class="form-flex1">
+                            <select class="options" name="opt1" oninput="testFinish();" required>
                                 <option value="0" disabled selected>Country</option>
                                 <option value="US">United States</option>
                                 <option value="CA">Canada</option>
@@ -379,149 +338,33 @@
                                 <option value="ZM">Zambia</option>
                                 <option value="ZW">Zimbabwe</option>
                             </select>
-
-                            <input id="h0" style="
-                                width: 48%;
-                                border: 0;
-                                border-bottom: 3px solid black;
-                                color:black;
-                                background: transparent;
-                                padding: 25px 5px 15px 0;
-                                width: 100%;
-                                font-weight:bold;
-                                margin-bottom: 20px;
-                            " class="outline" placeholder="Address" name="address" type="text"  required>
-                            <textarea id="h0" rows="6" class="message" name="msg" class="outline" placeholder="What can we help you with today?"></textarea>
-                            <div style="padding-top:30px; font-size:15px;">
-                                <input id="check" type="checkbox" name="check" required>
-                                <label for="check">&nbspI acknowledge that Feasibility.Pro will process my personal information in accordance with its privacy notice</label>
-                            </div>
+                        </div>
+                        
+                        <div class="form-flex2">
+                            <input name="address" type="text" placeholder="Address" oninput="testFinish();" required>
+                        </div>
                     </div>
-
-                    <button class="btn" type="submit" onclick="data()">Submit</button>
+                    
+                    
+                    
+                    
+                    
+                    <div class="imp">
+                        <div class="remember1" style="padding-top:2px;">
+                            <input name='chk' type="checkbox" id="tnc" oninput="testFinish();">
+                        </div>
+                        <div class="remember2">
+                            <label   style="padding-left:5px;" for="rememberMe">* I agree to all the T&C, Privacy Policy & Cookies policy</label>
+                        </div>
+                        
+                    </div>
+                    
+                    <button name="finish" id="butn" class="submit-btn" type="submit" onclick="buffer()" disabled><div class="buffer" style="display:flex; align-items:center; justify-content:center;">Sign Up<div class="loader" id="loader1"></div></div></button>
                 </form>
             </div>
-
-            <hr style="margin-left:50px;">
-        
-        
-            <div id="id1" class="flex-itm">
-                <h3 id="h2" style="padding-bottom:10px;">Call Us</h3>
-                <p  style="padding-bottom:14px;">Give us a call. We're here for you 24/7.</p>
-                
-                <p style="padding-bottom:14px;">International phone charges may apply, depending on your carrier and calling plan. Some international numbers may not work from mobile phones.</p>
-                
-                <div class="icn-config">
-                    <div class="icn">
-                        <i id="circle" class="fa fa-phone" style="font-size:18px; color:#ea6c01; padding:8px 10px; background:rgba(243,108,1,0.11); border-radius:100%;"></i>
-                    </div>
-                    <div class="icn">
-                        <p1 style="color:#ea6c01; font-weight: bold; margin-left: 20px;  line-height:32px;">+1 24 970 9224</p1>
-                    </div>
-                </div>
-                
-                <div id="br-gap"></div>
-                
-                <h3 id="h2"  style="padding-bottom:10px;">Visit Us</h3>
-                
-                <p  style="padding-bottom:14px;">Our office is located by Ambler Drive.</p>
-                
-                <p  style="padding-bottom:14px;">We're based in the heart of beautiful Mississauga.</p>
-                
-                <div class="icn-config">
-                    <div class="icn1">
-                        <i class="fa fa-map-marker" style="font-size:18px; padding:7px 12px; color:#ea6c01; background:rgba(243,108,1,0.11); border-radius:100%;"></i>
-                    </div>
-                    <div class="icn" style="padding-left:20px;">
-                        <p1 style="color:#ea6c01; font-weight: bold; line-height: 32px;">5810 AMBLER DRIVE, UNIT 14 MISSISSAUGA, ONTARIO L4W4J5, CANADA</p1>
-                    </div>
-                </div>
-                
-                <div id="br-gap"></div>
-                <h3 id="h2" style="padding-bottom:10px;">Live Chat</h3>
-                
-                <p style="padding-bottom:14px;">We're just one click away to help you make your project feasible.</p>
-                
-
-                <p style="padding-bottom:14px;">Live chat is only available for existing customers.</p>
-                
-                <div class="icn-config">
-                    <div class="icn">
-                        <i class="fa fa-comments" style="font-size:18px; padding:7px 8px; color:#ea6c01; background:rgba(243,108,1,0.11); border-radius:100%;"></i>                    
-                    </div>
-                    <div class="icn">
-                        <p1 style="color:#ea6c01; font-weight: bold; padding:7px 8px; margin-left: 20px;  line-height:32px;">Start Chat</p1>
-                    </div>
-                </div>
-                
-
-            </div>
-        </div> 
-        
-        <div class="flex-part0">
-            <div class="flex-itm01">
-                <h2 id="h2">FAQ</h2>
-                <div class="title1">Frequently asked questions.</div>
-            </div>
-            <div class="flex-itm0" style="text-align: left;">
-                <!-- <h2 id="h2" style="padding-bottom:20px;">Need immediate help?<h2> -->
-                <div class="dropdown">
-                    <button onclick="myFunction1()" id="one" class="dropbtn">Need immediate help?</button>
-                        <div id="myDrop1" id="myDropdown" class="dropdown-content">
-                            <p style="font-size:14px; font-weight:thin; text-align: left;">Give us a call. We're here for you 24/7.
-                                <br>
-                                <br>
-                                Existing customers can also reach us through Live Chat. Refer below frequently asked questions if you are new visitor.
-                            </p>
-                        </div>
-                </div>
-                
-                <div class="dropdown">
-                    <button onclick="myFunction2()" id="two" class="dropbtn">How to purchase the software?</button>
-                        <div id="myDrop2" id="myDropdown" class="dropdown-content">
-                            <p style="font-size:14px; font-weight:thin; text-align: left;">
-                                Refer our product page, you can purchase the software by making online payment. You can also contact our office for any help you need during the purchase.
-                            </p>
-                        </div>
-                </div>
-                
-                <div class="dropdown">
-                    <button onclick="myFunction3()" id="three" class="dropbtn">How to install the software?</button>
-                        <div id="myDrop3" id="myDropdown" class="dropdown-content">
-                            <p style="font-size:14px; font-weight:thin; text-align: left;">
-                                Immediately after payment, you will receive an email with installation guide and licensing details.  
-                            </p>
-                        </div>
-                </div>                
-                
-                <div class="dropdown">
-                    <button onclick="myFunction4()" id="four" class="dropbtn">Do we have Mac version of Feasibility.pro?</button>
-                        <div id="myDrop4" id="myDropdown" class="dropdown-content">
-                            <p style="font-size:14px; font-weight:thin; text-align: left;">
-                                Feasibility.Pro can not run directly from a Mac, and can not be supported as such; most MAC’s now have ‘Virtual PC’ capabilities which can recreate a Windows environment. There are many Feasibility.pro clients who are successfully running this software on a Mac via VMware or Parallels, or via virtual machines.  
-                            </p>
-                        </div>
-                </div> 
-                
-                <div class="dropdown">
-                    <button onclick="myFunction5()" id="five" class="dropbtn">How does pricing work?</button>
-                        <div id="myDrop5" id="myDropdown" class="dropdown-content">
-                            <p style="font-size:14px; font-weight:thin; text-align: left;">
-                                Our products are priced fairly and transparently. Prices for various licensing options are published on the product page, you don't have to call us to know the pricing.
-                                <br>
-                                <br>
-                                Even after purchase, you can upgrade, switch or cancel your purchase any time. Refer Cancelation Policy for specific details.
-                            </p>
-                        </div>
-                </div> 
-
-            </div>
+            <div class="already"><a href="signin.html" style="color:#0096FF">Already have an account?</a></div>
         </div>
-        
-        <br>
-        <br>
     </div>
-        
     <div class="end">
         <div class="end1">
             <h2>Address</h2>
@@ -543,40 +386,25 @@
             <i class="fa fa-youtube-play" style="font-size:18px;color:white; padding-right:15px"></i>
         </div>   
     </div>
-    <script>
-        function data(){
+    <script src="script.js"></script>
+    <script type ="text/javascript">
+        
+        function buffer(){
+            document.getElementById("loader1").classList.add("show");
             var frm=document.getElementById('frm');
-            var ck=document.getElementById('check')
-            var name=frm['fullname'].value;
+            var name=frm['full-name'].value;
             var email=frm['email'].value;
             var phone =frm['phone'].value;
-            var job=frm['job'].value;
-            var company=frm['company'].value;
             var opt=frm['opt'].value;
-            var msg=frm['msg'].value;
-
-            if(name!='' && email!='' && phone!='' && job!='' && company!='' && opt!=0 && msg!='' && ck.checked==true){
-                document.writeln("Name: "+name+"<br>");
-                document.writeln("Email: "+email+"<br>");
-                document.writeln("Phone: "+phone+"<br>");
-                document.writeln("Job Title: "+job+"<br>");
-                document.writeln("Company: "+company+"<br>");
-                document.writeln("Country: "+opt+"<br>");
-                document.writeln("What can we help you with today?: "+msg+"<br>");
-            }
+            var opt1=frm['opt1'].value;
+            var address=frm['address'].value;
+            document.writeln("Name: "+name+"<br>");
+            document.writeln("Email: "+email+"<br>");
+            document.writeln("Phone: "+phone+"<br>");
+            document.writeln("Organisation Type: "+opt+"<br>");
+            document.writeln("Country: "+opt1+"<br>");
+            document.writeln("Address : "+address+"<br>");
         }
-
-        function selectOption1(that){
-            if(that.value==12){
-                document.getElementById('job').style.display="block";
-                document.getElementById('org').style.display="block";
-                document.getElementById('pad').style.display="none";
-            }else {
-                document.getElementById('job').style.display="none";
-                document.getElementById('org').style.display="none";
-                document.getElementById('pad').style.display="block";
-            }
-        }
+        
     </script>
-    
 </body>
